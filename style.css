@@ -524,7 +524,6 @@ footer {
 .action-buttons {
   text-align: center;
   margin-top: 2rem;
-  background-color: var(--background-light);
   border-radius: 20px;
   padding: 1rem;
 }
