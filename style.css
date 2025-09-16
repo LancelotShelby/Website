@@ -1706,8 +1706,6 @@ footer {
 
 /* --- Tablet and Smaller Screens (Up to 900px) --- */
 @media (max-width: 900px) {
-  font-size: flexible;
-  
   header {
     flex-direction: column;
     padding: 1rem;
