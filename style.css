@@ -540,6 +540,10 @@ footer {
   transition: background-color 0.3s ease;
 }
 
+.action-buttons a:hover {
+  background-color: var(--accent-dark);
+}
+
 /* Updated styling for the university cards to stack logo and info vertically */
 .university-card {
   background-color: var(--card-bg);
