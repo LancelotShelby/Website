@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Universities & Programs</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    {% include 'header_template.html' %}
+    <div class="main-content-wrapper">
+        <main>
+            <div class="container">
+                <section class="filters-search">
+                    <h2>Find Your Dream University</h2>
+                    <div class="search-bar">
+                        <input type="text" id="searchInput" placeholder="Search by university name, country, or program...">
+                        <button id="searchButton"><i class="fas fa-search"></i> Search</button>
+                    </div>
+                    <div class="filters">
+                        <select id="countryFilter">
+                            <option value="">All Countries</option>
+                            {% for country in all_countries %}
+                                <option value="{{ country | lower }}">{{ country }}</option>
+                            {% endfor %}
+                        </select>
+                        <select id="typeFilter">
+                            <option value="">All Types</option>
+                            <option value="public">Public</option>
+                            <option value="private">Private</option>
+                        </select>
+                        <select id="degreeFilter">
+                            <option value="">All Degrees</option>
+                            <option value="associate">Associate</option>
+                            <option value="bachelor">Bachelor</option>
+                            <option value="master non thesis">Master Non Thesis</option>
+                            <option value="master with thesis">Master With Thesis</option>
+                            <option value="phd">PhD</option>
+                        </select>
+                    </div>
+                </section>
+
+                <section class="university-listings">
+                    <div id="universityList" class="grid-container">
+                        </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2025 Kola El Bahari Consulting. All rights reserved.</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

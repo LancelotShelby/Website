@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Universities in {{ country.name | title }}</title>
+    <link rel="stylesheet" href="{{ relative_path_prefix }}style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    {% include 'header_template.html' with context %}
+    <div class="main-content-wrapper">
+        <main class="country-list-page-main">
+            <div class="container">
+                <h1>Public Universities in {{ country.name | title }}</h1>
+                <p>Explore the list of public universities in {{ country.name | title }}.</p>
+                
+                <div class="requirements-box">
+                    <h2>Application Requirements</h2>
+                    <p>{{ country.public_requirements.other_info }}</p>
+                    <h3>Required Documents</h3>
+                    <ul>
+                        {% for doc in country.public_requirements.application_docs %}
+                            <li><strong>{{ doc }}</strong></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="university-grid">
+                    {% for uni in unis %}
+                    <a href="{{ relative_path_prefix }}{{ uni.internal_url }}" class="university-card">
+                        <div class="university-logo-container">
+                            <img src="{{ relative_path_prefix }}{{ uni.logo }}" alt="{{ uni.name }} logo">
+                        </div>
+                        <div class="university-info">
+                            <h3>{{ uni.name }}</h3>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+
+                <a href="{{ relative_path_prefix }}explore.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Search</a>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2025 Kola El Bahari Consulting. All rights reserved.</p>
+    </footer>
+</body>
+</html>

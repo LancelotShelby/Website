@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study in {{ country.name }}</title>
+    <link rel="stylesheet" href="{{ relative_path_prefix }}style.css">
+</head>
+<body>
+    {% include 'header_template.html' %}
+    <div class="main-content-wrapper">
+        <main class="content-container">
+            <h1>Study in {{ country.name }}</h1>
+            <p>{{ country.description }}</p>
+
+            <section class="info-section">
+                <h2>Application Requirements</h2>
+                
+                <div class="requirements-box">
+                    <h3>Public Universities</h3>
+                    <p>{{ country.public_requirements.other_info }}</p>
+                    <ul>
+                        {% for doc in country.public_requirements.application_docs %}
+                            <li>{{ doc }}</li>
+                        {% endfor %}
+                    </ul>
+                    <div class="action-buttons">
+                        <a href="public-{{ country.slug }}.html" class="button">See Public Universities</a>
+                    </div>
+                </div>
+                
+                <div class="requirements-box">
+                    <h3>Private Universities</h3>
+                    <p>{{ country.private_requirements.other_info }}</p>
+                    <ul>
+                        {% for doc in country.private_requirements.application_docs %}
+                            <li>{{ doc }}</li>
+                        {% endfor %}
+                    </ul>
+                    <div class="action-buttons">
+                        <a href="private-{{ country.slug }}.html" class="button">See Private Universities</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h2>Visa Information</h2>
+                <p>{{ country.visa_info }}</p>
+            </section>
+
+            <section class="info-section">
+                <h2>Cost of Living</h2>
+                <p>{{ country.living_costs }}</p>
+            </section>
+            
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2025 Kola El Bahari Consulting. All rights reserved.</p>
+    </footer>
+</body>
+</html>
