@@ -14,7 +14,7 @@
                 <ul class="dropdown-menu">
                     {% for country, types in country_universities_by_type.items() %}
                     <li class="sub-dropdown">
-                        <a href="{{ relative_path_prefix }}unis/{{ country|slugify }}/{{ country|slugify }}.html">{{ country | title }}</a>
+                        <a href="#">{{ country | title }}</a>
                         <ul class="sub-menu">
                             <li><a href="{{ relative_path_prefix }}unis/{{ country|slugify }}/{{ country|slugify }}.html">Overview & Requirements</a></li>
                             {% if 'public' in types %}

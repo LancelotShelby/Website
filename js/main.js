@@ -1,21 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("JS Loaded ✅");
-
-    // === NAVBAR TOGGLE (Hamburger Menu) ===
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector("nav ul");
+    const dropdownLinks = document.querySelectorAll(".dropdown > a");
 
     if (hamburger && navMenu) {
-        console.log("Hamburger & nav menu found ✅");
         hamburger.addEventListener("click", () => {
-            console.log("Hamburger clicked 🍔");
             navMenu.classList.toggle("active");
             hamburger.classList.toggle("open");
         });
-    } else {
-        console.warn("⚠️ Hamburger or nav menu not found in DOM");
     }
 
+    // Enable dropdown toggle on mobile
+    dropdownLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+            // Only run on mobile (screen < 768px)
+            if (window.innerWidth < 768) {
+                e.preventDefault(); // Prevent navigation
+                const dropdownMenu = link.nextElementSibling;
+                dropdownMenu.style.display =
+                    dropdownMenu.style.display === "block" ? "none" : "block";
+            }
+        });
+    });
+    
     // === UNIVERSITY FILTERING LOGIC ===
     const universityListContainer = document.getElementById('universityList');
     const searchInput = document.getElementById('searchInput');

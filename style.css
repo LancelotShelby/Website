@@ -88,10 +88,6 @@ nav ul li a {
   padding: 10px 5px;
 }
 
-nav ul li a:hover {
-  color: var(--heading);
-}
-
 /* Dropdown Menu (Desktop First) */
 .dropdown-menu, .sub-menu {
   display: none;
@@ -105,8 +101,13 @@ nav ul li a:hover {
   left: 0;
 }
 
+.sub-dropdown {
+  position: relative;
+  max-width: fit-content;
+}
 .dropdown:hover .dropdown-menu {
   display: block;
+  background-color: var(--primary);
 }
 
 .sub-dropdown:hover .sub-menu {
