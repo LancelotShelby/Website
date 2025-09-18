@@ -1717,6 +1717,10 @@ footer {
   transition: transform 0.3s ease;
 }
 
+nav ul.active {
+  display: flex;
+}
+
 /* ========================================================== */
 /* 8. Media Queries (Responsiveness)                          */
 /* ========================================================== */
