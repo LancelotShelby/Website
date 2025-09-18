@@ -5,7 +5,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const countryFilter = document.getElementById('countryFilter');
     const typeFilter = document.getElementById('typeFilter');
     const degreeFilter = document.getElementById('degreeFilter');
-    
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector("nav ul");
+
+if (hamburger && navMenu) {
+hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+    hamburger.classList.toggle("open");
+});
+}
+
     let allUniversities = [];
     let currentSearchTerm = '';
 
@@ -186,3 +195,4 @@ function filterAndRenderUniversities() {
         fetchUniversities();
     }
 });
+
