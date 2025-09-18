@@ -389,19 +389,6 @@
             },
             {
                 "university_id": "altinbas-university",
-                "name": "Emergency and First Aid",
-                "degree": "Associate",
-                "language": "Turkish",
-                "duration": "2 Years",
-                "tuition": "2,500 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "emergency-and-first-aid",
-                "internal_url": "emergency-and-first-aid.html"
-            },
-            {
-                "university_id": "altinbas-university",
                 "name": "Financial Economics",
                 "degree": "Master Non Thesis",
                 "language": "Turkish",
@@ -1290,6 +1277,32 @@
             },
             {
                 "university_id": "anadolu-university",
+                "name": "Business Administration",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 years",
+                "tuition": "50,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "business-administration",
+                "internal_url": "business-administration.html"
+            },
+            {
+                "university_id": "anadolu-university",
+                "name": "Cartoon and Animation",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 years",
+                "tuition": "60,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "cartoon-and-animation",
+                "internal_url": "cartoon-and-animation.html"
+            },
+            {
+                "university_id": "anadolu-university",
                 "name": "Cartoon and Animation",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -1316,6 +1329,19 @@
             },
             {
                 "university_id": "anadolu-university",
+                "name": "Ceramic Arts",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 years",
+                "tuition": "60,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "ceramic-arts",
+                "internal_url": "ceramic-arts.html"
+            },
+            {
+                "university_id": "anadolu-university",
                 "name": "Computer Education and Instructional Technology",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -1326,6 +1352,32 @@
                 "priority": null,
                 "slug": "computer-education-and-instructional-technology",
                 "internal_url": "computer-education-and-instructional-technology.html"
+            },
+            {
+                "university_id": "anadolu-university",
+                "name": "Computer Education and Instructional Technology",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 years",
+                "tuition": "45,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "computer-education-and-instructional-technology",
+                "internal_url": "computer-education-and-instructional-technology.html"
+            },
+            {
+                "university_id": "anadolu-university",
+                "name": "Economics",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 years",
+                "tuition": "50,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "economics",
+                "internal_url": "economics.html"
             },
             {
                 "university_id": "anadolu-university",
@@ -1368,6 +1420,19 @@
             },
             {
                 "university_id": "anadolu-university",
+                "name": "Educational Sciences",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 years",
+                "tuition": "45,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "educational-sciences",
+                "internal_url": "educational-sciences.html"
+            },
+            {
+                "university_id": "anadolu-university",
                 "name": "Fine Arts Education",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -1378,6 +1443,32 @@
                 "priority": null,
                 "slug": "fine-arts-education",
                 "internal_url": "fine-arts-education.html"
+            },
+            {
+                "university_id": "anadolu-university",
+                "name": "Fine Arts Education",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 years",
+                "tuition": "45,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "fine-arts-education",
+                "internal_url": "fine-arts-education.html"
+            },
+            {
+                "university_id": "anadolu-university",
+                "name": "Foreign Language Education",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 years",
+                "tuition": "45,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "foreign-language-education",
+                "internal_url": "foreign-language-education.html"
             },
             {
                 "university_id": "anadolu-university",
@@ -1407,6 +1498,19 @@
             },
             {
                 "university_id": "anadolu-university",
+                "name": "Gastronomy and Culinary Arts",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 years",
+                "tuition": "90,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "gastronomy-and-culinary-arts",
+                "internal_url": "gastronomy-and-culinary-arts.html"
+            },
+            {
+                "university_id": "anadolu-university",
                 "name": "Glass",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -1417,6 +1521,32 @@
                 "priority": null,
                 "slug": "glass",
                 "internal_url": "glass.html"
+            },
+            {
+                "university_id": "anadolu-university",
+                "name": "Glass",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 years",
+                "tuition": "60,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "glass",
+                "internal_url": "glass.html"
+            },
+            {
+                "university_id": "anadolu-university",
+                "name": "Graphic Arts",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 years",
+                "tuition": "60,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "graphic-arts",
+                "internal_url": "graphic-arts.html"
             },
             {
                 "university_id": "anadolu-university",
@@ -1446,6 +1576,19 @@
             },
             {
                 "university_id": "anadolu-university",
+                "name": "Labour Economics and Industrial Relations",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 years",
+                "tuition": "50,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "labour-economics-and-industrial-relations",
+                "internal_url": "labour-economics-and-industrial-relations.html"
+            },
+            {
+                "university_id": "anadolu-university",
                 "name": "Language and Speech Therapy",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -1456,6 +1599,32 @@
                 "priority": null,
                 "slug": "language-and-speech-therapy",
                 "internal_url": "language-and-speech-therapy.html"
+            },
+            {
+                "university_id": "anadolu-university",
+                "name": "Language and Speech Therapy",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 years",
+                "tuition": "45,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "language-and-speech-therapy",
+                "internal_url": "language-and-speech-therapy.html"
+            },
+            {
+                "university_id": "anadolu-university",
+                "name": "Law",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 years",
+                "tuition": "70,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "law",
+                "internal_url": "law.html"
             },
             {
                 "university_id": "anadolu-university",
@@ -1485,6 +1654,19 @@
             },
             {
                 "university_id": "anadolu-university",
+                "name": "Mathematics and Science Education",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 years",
+                "tuition": "45,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "mathematics-and-science-education",
+                "internal_url": "mathematics-and-science-education.html"
+            },
+            {
+                "university_id": "anadolu-university",
                 "name": "Painting",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -1495,6 +1677,32 @@
                 "priority": null,
                 "slug": "painting",
                 "internal_url": "painting.html"
+            },
+            {
+                "university_id": "anadolu-university",
+                "name": "Painting",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 years",
+                "tuition": "60,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "painting",
+                "internal_url": "painting.html"
+            },
+            {
+                "university_id": "anadolu-university",
+                "name": "Pharmacy",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "5 years",
+                "tuition": "130,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "pharmacy",
+                "internal_url": "pharmacy.html"
             },
             {
                 "university_id": "anadolu-university",
@@ -1524,6 +1732,19 @@
             },
             {
                 "university_id": "anadolu-university",
+                "name": "Political Science and Public Administration",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 years",
+                "tuition": "50,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "political-science-and-public-administration",
+                "internal_url": "political-science-and-public-administration.html"
+            },
+            {
+                "university_id": "anadolu-university",
                 "name": "Primary Education",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -1534,6 +1755,32 @@
                 "priority": null,
                 "slug": "primary-education",
                 "internal_url": "primary-education.html"
+            },
+            {
+                "university_id": "anadolu-university",
+                "name": "Primary Education",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 years",
+                "tuition": "45,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "primary-education",
+                "internal_url": "primary-education.html"
+            },
+            {
+                "university_id": "anadolu-university",
+                "name": "Printmaking",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 years",
+                "tuition": "60,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "printmaking",
+                "internal_url": "printmaking.html"
             },
             {
                 "university_id": "anadolu-university",
@@ -1563,6 +1810,19 @@
             },
             {
                 "university_id": "anadolu-university",
+                "name": "Public Finance",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 years",
+                "tuition": "50,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "public-finance",
+                "internal_url": "public-finance.html"
+            },
+            {
+                "university_id": "anadolu-university",
                 "name": "Sculpture",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -1573,6 +1833,32 @@
                 "priority": null,
                 "slug": "sculpture",
                 "internal_url": "sculpture.html"
+            },
+            {
+                "university_id": "anadolu-university",
+                "name": "Sculpture",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 years",
+                "tuition": "60,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "sculpture",
+                "internal_url": "sculpture.html"
+            },
+            {
+                "university_id": "anadolu-university",
+                "name": "Social Services",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 years",
+                "tuition": "45,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "social-services",
+                "internal_url": "social-services.html"
             },
             {
                 "university_id": "anadolu-university",
@@ -1602,6 +1888,32 @@
             },
             {
                 "university_id": "anadolu-university",
+                "name": "Special Education",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 years",
+                "tuition": "45,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "special-education",
+                "internal_url": "special-education.html"
+            },
+            {
+                "university_id": "anadolu-university",
+                "name": "Tour Guiding",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 years",
+                "tuition": "50,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "tour-guiding",
+                "internal_url": "tour-guiding.html"
+            },
+            {
+                "university_id": "anadolu-university",
                 "name": "Tour Guiding",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -1625,6 +1937,32 @@
                 "priority": null,
                 "slug": "tourism-management",
                 "internal_url": "tourism-management.html"
+            },
+            {
+                "university_id": "anadolu-university",
+                "name": "Tourism Management",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 years",
+                "tuition": "50,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "tourism-management",
+                "internal_url": "tourism-management.html"
+            },
+            {
+                "university_id": "anadolu-university",
+                "name": "Turkish and Social Sciences Education",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 years",
+                "tuition": "45,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "turkish-and-social-sciences-education",
+                "internal_url": "turkish-and-social-sciences-education.html"
             },
             {
                 "university_id": "anadolu-university",
@@ -3939,19 +4277,6 @@
                 "university_id": "aydin-university",
                 "name": "Computer Programming",
                 "degree": "Associate",
-                "language": "Turkish",
-                "duration": "2 Years",
-                "tuition": "3,000 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "computer-programming",
-                "internal_url": "computer-programming.html"
-            },
-            {
-                "university_id": "aydin-university",
-                "name": "Computer Programming",
-                "degree": "Associate",
                 "language": "English",
                 "duration": "2 Years",
                 "tuition": "3,000 USD",
@@ -4038,19 +4363,6 @@
                 "priority": null,
                 "slug": "cyber-security",
                 "internal_url": "cyber-security.html"
-            },
-            {
-                "university_id": "aydin-university",
-                "name": "Dental Prosthetics Technology",
-                "degree": "Associate",
-                "language": "Turkish",
-                "duration": "2 Years",
-                "tuition": "3,000 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "dental-prosthetics-technology",
-                "internal_url": "dental-prosthetics-technology.html"
             },
             {
                 "university_id": "aydin-university",
@@ -5754,19 +6066,6 @@
                 "priority": null,
                 "slug": "nutrition-and-dietetics",
                 "internal_url": "nutrition-and-dietetics.html"
-            },
-            {
-                "university_id": "aydin-university",
-                "name": "Occupational Health and Safety",
-                "degree": "Associate",
-                "language": "Turkish",
-                "duration": "2 Years",
-                "tuition": "3,000 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "occupational-health-and-safety",
-                "internal_url": "occupational-health-and-safety.html"
             },
             {
                 "university_id": "aydin-university",
@@ -11613,19 +11912,6 @@
             },
             {
                 "university_id": "cankiri-university",
-                "name": "Education Sciences",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 Years",
-                "tuition": null,
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "education-sciences",
-                "internal_url": "education-sciences.html"
-            },
-            {
-                "university_id": "cankiri-university",
                 "name": "Educational Measurement and Evaluation",
                 "degree": "Master With Thesis",
                 "language": "Turkish",
@@ -11965,19 +12251,6 @@
             {
                 "university_id": "cankiri-university",
                 "name": "Geography",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 Years",
-                "tuition": null,
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "geography",
-                "internal_url": "geography.html"
-            },
-            {
-                "university_id": "cankiri-university",
-                "name": "Geography",
                 "degree": "Master With Thesis",
                 "language": "Turkish",
                 "duration": "2 Years",
@@ -12082,19 +12355,6 @@
             {
                 "university_id": "cankiri-university",
                 "name": "History",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 Years",
-                "tuition": null,
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "history",
-                "internal_url": "history.html"
-            },
-            {
-                "university_id": "cankiri-university",
-                "name": "History",
                 "degree": "Master With Thesis",
                 "language": "Turkish",
                 "duration": "2 Years",
@@ -12169,19 +12429,6 @@
                 "priority": null,
                 "slug": "industrial-glass-and-ceramics",
                 "internal_url": "industrial-glass-and-ceramics.html"
-            },
-            {
-                "university_id": "cankiri-university",
-                "name": "Information and Records Management",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 Years",
-                "tuition": null,
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "information-and-records-management",
-                "internal_url": "information-and-records-management.html"
             },
             {
                 "university_id": "cankiri-university",
@@ -12771,19 +13018,6 @@
             {
                 "university_id": "cankiri-university",
                 "name": "Philosophy",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 Years",
-                "tuition": null,
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "philosophy",
-                "internal_url": "philosophy.html"
-            },
-            {
-                "university_id": "cankiri-university",
-                "name": "Philosophy",
                 "degree": "Master With Thesis",
                 "language": "Turkish",
                 "duration": "2 Years",
@@ -12966,19 +13200,6 @@
             {
                 "university_id": "cankiri-university",
                 "name": "Psychology",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 Years",
-                "tuition": null,
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "psychology",
-                "internal_url": "psychology.html"
-            },
-            {
-                "university_id": "cankiri-university",
-                "name": "Psychology",
                 "degree": "Master With Thesis",
                 "language": "Turkish",
                 "duration": "2 Years",
@@ -13053,19 +13274,6 @@
                 "priority": null,
                 "slug": "social-work",
                 "internal_url": "social-work.html"
-            },
-            {
-                "university_id": "cankiri-university",
-                "name": "Sociology",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 Years",
-                "tuition": null,
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "sociology",
-                "internal_url": "sociology.html"
             },
             {
                 "university_id": "cankiri-university",
@@ -13209,19 +13417,6 @@
                 "priority": null,
                 "slug": "tourist-guidance",
                 "internal_url": "tourist-guidance.html"
-            },
-            {
-                "university_id": "cankiri-university",
-                "name": "Turkishlanguage and Literature",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 Years",
-                "tuition": null,
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "turkishlanguage-and-literature",
-                "internal_url": "turkishlanguage-and-literature.html"
             },
             {
                 "university_id": "cankiri-university",
@@ -13789,35 +13984,9 @@
             {
                 "university_id": "gelisim-university",
                 "name": "Business Administration",
-                "degree": "Master Non Thesis",
-                "language": "Turkish",
-                "duration": "1.5 Years",
-                "tuition": "3,750 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "business-administration",
-                "internal_url": "business-administration.html"
-            },
-            {
-                "university_id": "gelisim-university",
-                "name": "Business Administration",
                 "degree": "Master With Thesis",
                 "language": "Turkish",
                 "duration": "2 Years",
-                "tuition": "4,500 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "business-administration",
-                "internal_url": "business-administration.html"
-            },
-            {
-                "university_id": "gelisim-university",
-                "name": "Business Administration",
-                "degree": "Master Non Thesis",
-                "language": "English",
-                "duration": "1.5 Years",
                 "tuition": "4,500 USD",
                 "requirements": null,
                 "details": null,
@@ -15457,19 +15626,6 @@
                 "language": "Turkish",
                 "duration": "2 Years",
                 "tuition": "2,750 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "occupational-health-and-safety",
-                "internal_url": "occupational-health-and-safety.html"
-            },
-            {
-                "university_id": "gelisim-university",
-                "name": "Occupational Health and Safety",
-                "degree": "Master Non Thesis",
-                "language": "Turkish",
-                "duration": "1.5 Years",
-                "tuition": "3,750 USD",
                 "requirements": null,
                 "details": null,
                 "priority": null,
@@ -18294,19 +18450,6 @@
             },
             {
                 "university_id": "isik-university",
-                "name": "Computer Programming",
-                "degree": "Associate",
-                "language": "Turkish",
-                "duration": "2 Years",
-                "tuition": "1,400 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "computer-programming",
-                "internal_url": "computer-programming.html"
-            },
-            {
-                "university_id": "isik-university",
                 "name": "Contemporary Business",
                 "degree": "PhD",
                 "language": "English",
@@ -18411,19 +18554,6 @@
             },
             {
                 "university_id": "isik-university",
-                "name": "Emergency and First Aid",
-                "degree": "Associate",
-                "language": "Turkish",
-                "duration": "2 Years",
-                "tuition": "1,400 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "emergency-and-first-aid",
-                "internal_url": "emergency-and-first-aid.html"
-            },
-            {
-                "university_id": "isik-university",
                 "name": "Executive Business Administration",
                 "degree": "Master Non Thesis",
                 "language": "English",
@@ -18460,19 +18590,6 @@
                 "priority": null,
                 "slug": "foreign-trade",
                 "internal_url": "foreign-trade.html"
-            },
-            {
-                "university_id": "isik-university",
-                "name": "Graphic Design",
-                "degree": "Associate",
-                "language": "Turkish",
-                "duration": "2 Years",
-                "tuition": "1,400 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "graphic-design",
-                "internal_url": "graphic-design.html"
             },
             {
                 "university_id": "isik-university",
@@ -18762,19 +18879,6 @@
             },
             {
                 "university_id": "isik-university",
-                "name": "Medical Imaging Techniques",
-                "degree": "Associate",
-                "language": "Turkish",
-                "duration": "2 Years",
-                "tuition": "1,400 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "medical-imaging-techniques",
-                "internal_url": "medical-imaging-techniques.html"
-            },
-            {
-                "university_id": "isik-university",
                 "name": "Medical Laboratory",
                 "degree": "Associate",
                 "language": "Turkish",
@@ -18824,19 +18928,6 @@
                 "priority": null,
                 "slug": "operating-room-services",
                 "internal_url": "operating-room-services.html"
-            },
-            {
-                "university_id": "isik-university",
-                "name": "Opticianry",
-                "degree": "Associate",
-                "language": "Turkish",
-                "duration": "2 Years",
-                "tuition": "1,400 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "opticianry",
-                "internal_url": "opticianry.html"
             },
             {
                 "university_id": "isik-university",
@@ -19095,7 +19186,7 @@
                 "degree": "Bachelor",
                 "language": "Turkish",
                 "duration": "5 Years",
-                "tuition": null,
+                "tuition": "140,000 TL",
                 "requirements": null,
                 "details": null,
                 "priority": null,
@@ -19472,7 +19563,7 @@
                 "degree": "Bachelor",
                 "language": "Turkish",
                 "duration": "4 Years",
-                "tuition": null,
+                "tuition": "45,000 TL",
                 "requirements": null,
                 "details": null,
                 "priority": null,
@@ -20714,19 +20805,6 @@
             },
             {
                 "university_id": "kultur-university",
-                "name": "Banking and Insurance",
-                "degree": "Associate",
-                "language": "Turkish",
-                "duration": "2 Years",
-                "tuition": "1,925 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "banking-and-insurance",
-                "internal_url": "banking-and-insurance.html"
-            },
-            {
-                "university_id": "kultur-university",
                 "name": "Business Administration",
                 "degree": "Bachelor",
                 "language": "English",
@@ -21624,19 +21702,6 @@
             },
             {
                 "university_id": "kultur-university",
-                "name": "Human Rights",
-                "degree": "Master With Thesis",
-                "language": "Turkish",
-                "duration": "2 Years",
-                "tuition": "5,200 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "human-rights",
-                "internal_url": "human-rights.html"
-            },
-            {
-                "university_id": "kultur-university",
                 "name": "Industrial Engineering",
                 "degree": "Bachelor",
                 "language": "English",
@@ -22475,19 +22540,6 @@
                 "university_id": "istanbul-medipol-university",
                 "name": "Anesthesia",
                 "degree": "Associate",
-                "language": "Turkish",
-                "duration": "2 Years",
-                "tuition": "3,500 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "anesthesia",
-                "internal_url": "anesthesia.html"
-            },
-            {
-                "university_id": "istanbul-medipol-university",
-                "name": "Anesthesia",
-                "degree": "Associate",
                 "language": "English",
                 "duration": "2 Years",
                 "tuition": "4,000 USD",
@@ -22587,19 +22639,6 @@
                 "priority": null,
                 "slug": "audiology",
                 "internal_url": "audiology.html"
-            },
-            {
-                "university_id": "istanbul-medipol-university",
-                "name": "Audiometry",
-                "degree": "Associate",
-                "language": "Turkish",
-                "duration": "2 Years",
-                "tuition": "3,500 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "audiometry",
-                "internal_url": "audiometry.html"
             },
             {
                 "university_id": "istanbul-medipol-university",
@@ -22795,19 +22834,6 @@
                 "priority": null,
                 "slug": "business-administration",
                 "internal_url": "business-administration.html"
-            },
-            {
-                "university_id": "istanbul-medipol-university",
-                "name": "Child Development",
-                "degree": "Associate",
-                "language": "Turkish",
-                "duration": "2 Years",
-                "tuition": "3,500 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "child-development",
-                "internal_url": "child-development.html"
             },
             {
                 "university_id": "istanbul-medipol-university",
@@ -23110,19 +23136,6 @@
             },
             {
                 "university_id": "istanbul-medipol-university",
-                "name": "Dental Prosthetics Technology",
-                "degree": "Associate",
-                "language": "Turkish",
-                "duration": "2 Years",
-                "tuition": "4,000 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "dental-prosthetics-technology",
-                "internal_url": "dental-prosthetics-technology.html"
-            },
-            {
-                "university_id": "istanbul-medipol-university",
                 "name": "Dentistry",
                 "degree": "Bachelor",
                 "language": "English",
@@ -23146,19 +23159,6 @@
                 "priority": null,
                 "slug": "dentistry",
                 "internal_url": "dentistry.html"
-            },
-            {
-                "university_id": "istanbul-medipol-university",
-                "name": "Dialysis",
-                "degree": "Associate",
-                "language": "Turkish",
-                "duration": "2 Years",
-                "tuition": "3,500 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "dialysis",
-                "internal_url": "dialysis.html"
             },
             {
                 "university_id": "istanbul-medipol-university",
@@ -23237,32 +23237,6 @@
                 "priority": null,
                 "slug": "electroneurophysiology",
                 "internal_url": "electroneurophysiology.html"
-            },
-            {
-                "university_id": "istanbul-medipol-university",
-                "name": "Electroneurophysiology",
-                "degree": "Associate",
-                "language": "Turkish",
-                "duration": "2 Years",
-                "tuition": "3,500 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "electroneurophysiology",
-                "internal_url": "electroneurophysiology.html"
-            },
-            {
-                "university_id": "istanbul-medipol-university",
-                "name": "Emergency and First Aid",
-                "degree": "Associate",
-                "language": "Turkish",
-                "duration": "2 Years",
-                "tuition": "3,500 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "emergency-and-first-aid",
-                "internal_url": "emergency-and-first-aid.html"
             },
             {
                 "university_id": "istanbul-medipol-university",
@@ -23734,19 +23708,6 @@
             },
             {
                 "university_id": "istanbul-medipol-university",
-                "name": "Management of Health Institutions",
-                "degree": "Associate",
-                "language": "Turkish",
-                "duration": "2 Years",
-                "tuition": "3,500 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "management-of-health-institutions",
-                "internal_url": "management-of-health-institutions.html"
-            },
-            {
-                "university_id": "istanbul-medipol-university",
                 "name": "Mathematics Teaching For Elementary Schools",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -23786,19 +23747,6 @@
             },
             {
                 "university_id": "istanbul-medipol-university",
-                "name": "Medical Documentation and Secretarial",
-                "degree": "Associate",
-                "language": "Turkish",
-                "duration": "2 Years",
-                "tuition": "3,500 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "medical-documentation-and-secretarial",
-                "internal_url": "medical-documentation-and-secretarial.html"
-            },
-            {
-                "university_id": "istanbul-medipol-university",
                 "name": "Medical Imaging Techniques",
                 "degree": "Associate",
                 "language": "Turkish",
@@ -23809,32 +23757,6 @@
                 "priority": null,
                 "slug": "medical-imaging-techniques",
                 "internal_url": "medical-imaging-techniques.html"
-            },
-            {
-                "university_id": "istanbul-medipol-university",
-                "name": "Medical Imaging Techniques",
-                "degree": "Associate",
-                "language": "Turkish",
-                "duration": "2 Years",
-                "tuition": "3,500 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "medical-imaging-techniques",
-                "internal_url": "medical-imaging-techniques.html"
-            },
-            {
-                "university_id": "istanbul-medipol-university",
-                "name": "Medical Laboratory",
-                "degree": "Associate",
-                "language": "Turkish",
-                "duration": "2 Years",
-                "tuition": "3,500 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "medical-laboratory",
-                "internal_url": "medical-laboratory.html"
             },
             {
                 "university_id": "istanbul-medipol-university",
@@ -23874,19 +23796,6 @@
                 "priority": null,
                 "slug": "medicine",
                 "internal_url": "medicine.html"
-            },
-            {
-                "university_id": "istanbul-medipol-university",
-                "name": "Midwifery",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 Years",
-                "tuition": "7,000 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "midwifery",
-                "internal_url": "midwifery.html"
             },
             {
                 "university_id": "istanbul-medipol-university",
@@ -24007,32 +23916,6 @@
             },
             {
                 "university_id": "istanbul-medipol-university",
-                "name": "Occupational Health and Safety",
-                "degree": "Associate",
-                "language": "Turkish",
-                "duration": "2 Years",
-                "tuition": "3,500 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "occupational-health-and-safety",
-                "internal_url": "occupational-health-and-safety.html"
-            },
-            {
-                "university_id": "istanbul-medipol-university",
-                "name": "Operating Room Services",
-                "degree": "Associate",
-                "language": "Turkish",
-                "duration": "2 Years",
-                "tuition": "3,500 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "operating-room-services",
-                "internal_url": "operating-room-services.html"
-            },
-            {
-                "university_id": "istanbul-medipol-university",
                 "name": "Operating Room Services",
                 "degree": "Associate",
                 "language": "Turkish",
@@ -24056,32 +23939,6 @@
                 "priority": null,
                 "slug": "opticianry",
                 "internal_url": "opticianry.html"
-            },
-            {
-                "university_id": "istanbul-medipol-university",
-                "name": "Opticianry",
-                "degree": "Associate",
-                "language": "Turkish",
-                "duration": "2 Years",
-                "tuition": "3,500 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "opticianry",
-                "internal_url": "opticianry.html"
-            },
-            {
-                "university_id": "istanbul-medipol-university",
-                "name": "Oral and Dental Health",
-                "degree": "Associate",
-                "language": "Turkish",
-                "duration": "2 Years",
-                "tuition": "3,500 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "oral-and-dental-health",
-                "internal_url": "oral-and-dental-health.html"
             },
             {
                 "university_id": "istanbul-medipol-university",
@@ -24160,19 +24017,6 @@
                 "priority": null,
                 "slug": "pharmacy-services",
                 "internal_url": "pharmacy-services.html"
-            },
-            {
-                "university_id": "istanbul-medipol-university",
-                "name": "Physiotherapy",
-                "degree": "Associate",
-                "language": "Turkish",
-                "duration": "2 Years",
-                "tuition": "3,500 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "physiotherapy",
-                "internal_url": "physiotherapy.html"
             },
             {
                 "university_id": "istanbul-medipol-university",
@@ -24381,19 +24225,6 @@
                 "priority": null,
                 "slug": "radio-tv-and-cinema",
                 "internal_url": "radio-tv-and-cinema.html"
-            },
-            {
-                "university_id": "istanbul-medipol-university",
-                "name": "Radiotherapy",
-                "degree": "Associate",
-                "language": "Turkish",
-                "duration": "2 Years",
-                "tuition": "3,500 USD",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "radiotherapy",
-                "internal_url": "radiotherapy.html"
             },
             {
                 "university_id": "istanbul-medipol-university",
@@ -27089,6 +26920,19 @@
             },
             {
                 "university_id": "tokat-university",
+                "name": "Agriculture Economics",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 Years",
+                "tuition": "40,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "agriculture-economics",
+                "internal_url": "agriculture-economics.html"
+            },
+            {
+                "university_id": "tokat-university",
                 "name": "Architecture",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -27115,6 +26959,19 @@
             },
             {
                 "university_id": "tokat-university",
+                "name": "Banking and Insurance",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 Years",
+                "tuition": "35,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "banking-and-insurance",
+                "internal_url": "banking-and-insurance.html"
+            },
+            {
+                "university_id": "tokat-university",
                 "name": "Biology",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -27125,6 +26982,19 @@
                 "priority": null,
                 "slug": "biology",
                 "internal_url": "biology.html"
+            },
+            {
+                "university_id": "tokat-university",
+                "name": "Biosystems Engineering",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 Years",
+                "tuition": "40,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "biosystems-engineering",
+                "internal_url": "biosystems-engineering.html"
             },
             {
                 "university_id": "tokat-university",
@@ -27323,6 +27193,19 @@
             },
             {
                 "university_id": "tokat-university",
+                "name": "Field Crops",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 Years",
+                "tuition": "40,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "field-crops",
+                "internal_url": "field-crops.html"
+            },
+            {
+                "university_id": "tokat-university",
                 "name": "Food Engineering",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -27333,6 +27216,19 @@
                 "priority": null,
                 "slug": "food-engineering",
                 "internal_url": "food-engineering.html"
+            },
+            {
+                "university_id": "tokat-university",
+                "name": "Gastronomy and Culinary Arts",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 Years",
+                "tuition": "35,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "gastronomy-and-culinary-arts",
+                "internal_url": "gastronomy-and-culinary-arts.html"
             },
             {
                 "university_id": "tokat-university",
@@ -27440,6 +27336,32 @@
             },
             {
                 "university_id": "tokat-university",
+                "name": "Horticulture",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 Years",
+                "tuition": "40,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "horticulture",
+                "internal_url": "horticulture.html"
+            },
+            {
+                "university_id": "tokat-university",
+                "name": "International Trade and Logistics",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 Years",
+                "tuition": "35,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "international-trade-and-logistics",
+                "internal_url": "international-trade-and-logistics.html"
+            },
+            {
+                "university_id": "tokat-university",
                 "name": "International Trade and Logistics",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -27505,6 +27427,32 @@
             },
             {
                 "university_id": "tokat-university",
+                "name": "Medicine",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "6 Years",
+                "tuition": "200,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "medicine",
+                "internal_url": "medicine.html"
+            },
+            {
+                "university_id": "tokat-university",
+                "name": "Midwifery",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 Years",
+                "tuition": "40,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "midwifery",
+                "internal_url": "midwifery.html"
+            },
+            {
+                "university_id": "tokat-university",
                 "name": "Midwifery",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -27528,19 +27476,6 @@
                 "priority": null,
                 "slug": "molecular-biology-and-genetics",
                 "internal_url": "molecular-biology-and-genetics.html"
-            },
-            {
-                "university_id": "tokat-university",
-                "name": "Nursing",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 Years",
-                "tuition": "40,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "nursing",
-                "internal_url": "nursing.html"
             },
             {
                 "university_id": "tokat-university",
@@ -27593,6 +27528,32 @@
                 "priority": null,
                 "slug": "physiotherapy-and-rehabilitation",
                 "internal_url": "physiotherapy-and-rehabilitation.html"
+            },
+            {
+                "university_id": "tokat-university",
+                "name": "Physiotherapy and Rehabilitation",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 Years",
+                "tuition": "40,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "physiotherapy-and-rehabilitation",
+                "internal_url": "physiotherapy-and-rehabilitation.html"
+            },
+            {
+                "university_id": "tokat-university",
+                "name": "Plant Protection",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 Years",
+                "tuition": "40,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "plant-protection",
+                "internal_url": "plant-protection.html"
             },
             {
                 "university_id": "tokat-university",
@@ -27687,6 +27648,19 @@
             },
             {
                 "university_id": "tokat-university",
+                "name": "Recreation",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 Years",
+                "tuition": "35,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "recreation",
+                "internal_url": "recreation.html"
+            },
+            {
+                "university_id": "tokat-university",
                 "name": "Science Teacher Education",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -27710,6 +27684,19 @@
                 "priority": null,
                 "slug": "social-studies-teaching",
                 "internal_url": "social-studies-teaching.html"
+            },
+            {
+                "university_id": "tokat-university",
+                "name": "Soil Science and Plant Nutrition",
+                "degree": "Bachelor",
+                "language": "Turkish",
+                "duration": "4 Years",
+                "tuition": "40,000 TL",
+                "requirements": null,
+                "details": null,
+                "priority": null,
+                "slug": "soil-science-and-plant-nutrition",
+                "internal_url": "soil-science-and-plant-nutrition.html"
             },
             {
                 "university_id": "tokat-university",
@@ -27778,16 +27765,16 @@
             },
             {
                 "university_id": "tokat-university",
-                "name": "Turkish Language and Literature",
+                "name": "Zootechnics",
                 "degree": "Bachelor",
                 "language": "Turkish",
                 "duration": "4 Years",
-                "tuition": "35,000 TL",
+                "tuition": "40,000 TL",
                 "requirements": null,
                 "details": null,
                 "priority": null,
-                "slug": "turkish-language-and-literature",
-                "internal_url": "turkish-language-and-literature.html"
+                "slug": "zootechnics",
+                "internal_url": "zootechnics.html"
             },
             {
                 "university_id": "tokat-university",
