@@ -515,6 +515,7 @@ footer {
   text-align: center;
 }
 
+
 .info-section p {
   color: var(--text);
   font-size: 1.1rem;
@@ -1703,160 +1704,125 @@ footer {
     box-shadow: 0 0 0 3px var(--accent); /* Adds a focus ring */
 }
 
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+  z-index: 999;
+}
+
+.hamburger.open {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
+}
+
 /* ========================================================== */
 /* 8. Media Queries (Responsiveness)                          */
 /* ========================================================== */
 
-/* --- Tablet and Smaller Screens (Up to 900px) --- */
-@media (max-width: 900px) {
+/* === Responsive Design with Improvements === */
+
+@media (max-width: 1024px) {
   header {
-    flex-direction: column;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
   }
   nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-top: 1rem;
-    align-items: center;
-  }
-  .logo img {
-    height: 50px;
-  }
-  .hero {
-    padding: 4rem 1.5rem;
+    gap: 1.5rem;
   }
   .hero-text h1 {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
   }
   .hero-text p {
     font-size: 1.1rem;
   }
-  .dropdown-menu, .sub-menu {
-    position: static;
-    display: flex;
-    flex-direction: column;
-    background-color: transparent;
-    box-shadow: none;
-    min-width: unset;
-  }
-  .dropdown-menu a, .sub-menu a {
-    padding: 5px 10px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-    margin-top: 5px;
-  }
-  
-  nav ul .dropdown-menu, nav ul .sub-menu {
-    display: none; /* Hide the list items */
-    flex-direction: column; /* Stack them vertically if they do appear */
-  }
 }
 
-/* --- Mobile Devices (Up to 768px) --- */
 @media (max-width: 768px) {
-  /* Main Sections & Components */
-  .why-choose, .testimonials, .contact {
-    padding: 2rem 1rem;
-  }
-  .why-choose h2, .testimonials h2, .contact h2, .contact-options h2, .uni-header h1, .program-detail-header h1 {
-    font-size: 2rem;
-  }
-  .features, .testimonial-cards, .options-container, .search-bar, .filters, .filter-controls, .search-and-filters-container {
+  /* Navigation adjustments */
+  nav ul {
+    display: none;
     flex-direction: column;
-    align-items: center;
-    gap: 1.5rem; /* Using a single, consistent gap */
-  }
-  .feature, .testimonial, .contact-info, .contact-form, .contact-option {
+    background-color: var(--primary);
+    position: absolute;
+    top: 100%;
+    right: 0;
     width: 100%;
-    max-width: 400px;
+    padding: 1rem;
   }
-  
-  /* Explore & University Pages */
-  .explore-page h1 {
-    font-size: 2rem;
+  nav ul.active {
+    display: flex;
   }
-  .filter-controls {
-    align-items: stretch; /* Stretch filters to full width */
-    gap: 1rem;
-    padding: 1.5rem;
-  }
-  .filter-group {
-    min-width: unset;
-  }
-  #searchUniversities, #searchInput, #programSearch, #degreeFilter {
-    width: 100%;
-    max-width: none;
-    min-width: unset;
-  }
-  .university-grid-explore {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  .university-full-detail-page-main, .program-detail-page-main, .program-full-details {
-    padding: 1.5rem;
-  }
-  .uni-description-full {
-    font-size: 0.95rem;
-  }
-  .programs-section h2 {
+  .hamburger {
+    display: block;
     font-size: 1.8rem;
+    cursor: pointer;
   }
-  .program-title-full-page {
-    font-size: 1.2rem;
-    padding: 1rem 1.5rem;
-  }
-  nav ul .dropdown-menu, nav ul .sub-menu {
-    display: none; /* Hide the list items */
-    flex-direction: column; /* Stack them vertically if they do appear */
-  }
-}
 
-/* --- Very Small Mobile (Up to 600px) --- */
-@media (max-width: 600px) {
-  .modal-content {
-    margin: 5% auto;
-    width: 95%;
-    padding: 20px;
-  }
-  #modalProgramContent h2 {
-    font-size: 1.5rem;
-  }
-  #modalProgramContent p, #modalProgramContent li {
-    font-size: 0.9rem;
-  }
-  nav ul .dropdown-menu, nav ul .sub-menu {
-    display: none; /* Hide the list items */
-    flex-direction: column; /* Stack them vertically if they do appear */
-  }
-}
-
-/* --- Smallest Screens (Up to 480px) --- */
-@media (max-width: 480px) {
-  header {
-    padding: 1rem 0.5rem;
-  }
-  .logo img {
-    height: 40px;
-  }
-  nav ul li a {
-    font-size: 0.9rem;
-  }
   .hero {
     padding: 3rem 1rem;
   }
   .hero-text h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
-  .cta-btn {
-    padding: 0.6rem 1.2rem;
+  .hero-text p {
     font-size: 1rem;
   }
-  .contact-option {
-    padding: 20px;
-  }
 
-  nav ul .dropdown-menu, nav ul .sub-menu {
-    display: none; /* Hide the list items */
-    flex-direction: column; /* Stack them vertically if they do appear */
+  .features,
+  .testimonial-cards,
+  .contact-container,
+  .options-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .university-grid-explore {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .country-showcase .country-grid,
+  .features,
+  .testimonial-cards,
+  .options-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .university-grid,
+  .university-grid-explore {
+    grid-template-columns: 1fr;
+  }
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+  .hero-text p {
+    font-size: 0.95rem;
+  }
+  .cta-btn {
+    display: block;
+    margin: 0.5rem auto;
+  }
+  .filter-controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .program-details-explore.active {
+    max-height: 500px;
+  }
+  .modal-content {
+    width: 95%;
+    margin: 20% auto;
+    padding: 20px;
   }
 }
