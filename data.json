@@ -1277,19 +1277,6 @@
             },
             {
                 "university_id": "anadolu-university",
-                "name": "Business Administration",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 years",
-                "tuition": "50,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "business-administration",
-                "internal_url": "business-administration.html"
-            },
-            {
-                "university_id": "anadolu-university",
                 "name": "Cartoon and Animation",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -1300,32 +1287,6 @@
                 "priority": null,
                 "slug": "cartoon-and-animation",
                 "internal_url": "cartoon-and-animation.html"
-            },
-            {
-                "university_id": "anadolu-university",
-                "name": "Cartoon and Animation",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 years",
-                "tuition": "60,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "cartoon-and-animation",
-                "internal_url": "cartoon-and-animation.html"
-            },
-            {
-                "university_id": "anadolu-university",
-                "name": "Ceramic Arts",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 years",
-                "tuition": "60,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "ceramic-arts",
-                "internal_url": "ceramic-arts.html"
             },
             {
                 "university_id": "anadolu-university",
@@ -1355,19 +1316,6 @@
             },
             {
                 "university_id": "anadolu-university",
-                "name": "Computer Education and Instructional Technology",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 years",
-                "tuition": "45,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "computer-education-and-instructional-technology",
-                "internal_url": "computer-education-and-instructional-technology.html"
-            },
-            {
-                "university_id": "anadolu-university",
                 "name": "Economics",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -1378,32 +1326,6 @@
                 "priority": null,
                 "slug": "economics",
                 "internal_url": "economics.html"
-            },
-            {
-                "university_id": "anadolu-university",
-                "name": "Economics",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 years",
-                "tuition": "50,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "economics",
-                "internal_url": "economics.html"
-            },
-            {
-                "university_id": "anadolu-university",
-                "name": "Educational Sciences",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 years",
-                "tuition": "45,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "educational-sciences",
-                "internal_url": "educational-sciences.html"
             },
             {
                 "university_id": "anadolu-university",
@@ -1446,19 +1368,6 @@
             },
             {
                 "university_id": "anadolu-university",
-                "name": "Fine Arts Education",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 years",
-                "tuition": "45,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "fine-arts-education",
-                "internal_url": "fine-arts-education.html"
-            },
-            {
-                "university_id": "anadolu-university",
                 "name": "Foreign Language Education",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -1469,32 +1378,6 @@
                 "priority": null,
                 "slug": "foreign-language-education",
                 "internal_url": "foreign-language-education.html"
-            },
-            {
-                "university_id": "anadolu-university",
-                "name": "Foreign Language Education",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 years",
-                "tuition": "45,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "foreign-language-education",
-                "internal_url": "foreign-language-education.html"
-            },
-            {
-                "university_id": "anadolu-university",
-                "name": "Gastronomy and Culinary Arts",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 years",
-                "tuition": "90,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "gastronomy-and-culinary-arts",
-                "internal_url": "gastronomy-and-culinary-arts.html"
             },
             {
                 "university_id": "anadolu-university",
@@ -1524,19 +1407,6 @@
             },
             {
                 "university_id": "anadolu-university",
-                "name": "Glass",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 years",
-                "tuition": "60,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "glass",
-                "internal_url": "glass.html"
-            },
-            {
-                "university_id": "anadolu-university",
                 "name": "Graphic Arts",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -1547,32 +1417,6 @@
                 "priority": null,
                 "slug": "graphic-arts",
                 "internal_url": "graphic-arts.html"
-            },
-            {
-                "university_id": "anadolu-university",
-                "name": "Graphic Arts",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 years",
-                "tuition": "60,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "graphic-arts",
-                "internal_url": "graphic-arts.html"
-            },
-            {
-                "university_id": "anadolu-university",
-                "name": "Labour Economics and Industrial Relations",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 years",
-                "tuition": "50,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "labour-economics-and-industrial-relations",
-                "internal_url": "labour-economics-and-industrial-relations.html"
             },
             {
                 "university_id": "anadolu-university",
@@ -1602,19 +1446,6 @@
             },
             {
                 "university_id": "anadolu-university",
-                "name": "Language and Speech Therapy",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 years",
-                "tuition": "45,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "language-and-speech-therapy",
-                "internal_url": "language-and-speech-therapy.html"
-            },
-            {
-                "university_id": "anadolu-university",
                 "name": "Law",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -1625,32 +1456,6 @@
                 "priority": null,
                 "slug": "law",
                 "internal_url": "law.html"
-            },
-            {
-                "university_id": "anadolu-university",
-                "name": "Law",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 years",
-                "tuition": "70,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "law",
-                "internal_url": "law.html"
-            },
-            {
-                "university_id": "anadolu-university",
-                "name": "Mathematics and Science Education",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 years",
-                "tuition": "45,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "mathematics-and-science-education",
-                "internal_url": "mathematics-and-science-education.html"
             },
             {
                 "university_id": "anadolu-university",
@@ -1680,19 +1485,6 @@
             },
             {
                 "university_id": "anadolu-university",
-                "name": "Painting",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 years",
-                "tuition": "60,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "painting",
-                "internal_url": "painting.html"
-            },
-            {
-                "university_id": "anadolu-university",
                 "name": "Pharmacy",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -1703,32 +1495,6 @@
                 "priority": null,
                 "slug": "pharmacy",
                 "internal_url": "pharmacy.html"
-            },
-            {
-                "university_id": "anadolu-university",
-                "name": "Pharmacy",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "5 years",
-                "tuition": "130,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "pharmacy",
-                "internal_url": "pharmacy.html"
-            },
-            {
-                "university_id": "anadolu-university",
-                "name": "Political Science and Public Administration",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 years",
-                "tuition": "50,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "political-science-and-public-administration",
-                "internal_url": "political-science-and-public-administration.html"
             },
             {
                 "university_id": "anadolu-university",
@@ -1758,19 +1524,6 @@
             },
             {
                 "university_id": "anadolu-university",
-                "name": "Primary Education",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 years",
-                "tuition": "45,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "primary-education",
-                "internal_url": "primary-education.html"
-            },
-            {
-                "university_id": "anadolu-university",
                 "name": "Printmaking",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -1781,32 +1534,6 @@
                 "priority": null,
                 "slug": "printmaking",
                 "internal_url": "printmaking.html"
-            },
-            {
-                "university_id": "anadolu-university",
-                "name": "Printmaking",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 years",
-                "tuition": "60,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "printmaking",
-                "internal_url": "printmaking.html"
-            },
-            {
-                "university_id": "anadolu-university",
-                "name": "Public Finance",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 years",
-                "tuition": "50,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "public-finance",
-                "internal_url": "public-finance.html"
             },
             {
                 "university_id": "anadolu-university",
@@ -1836,19 +1563,6 @@
             },
             {
                 "university_id": "anadolu-university",
-                "name": "Sculpture",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 years",
-                "tuition": "60,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "sculpture",
-                "internal_url": "sculpture.html"
-            },
-            {
-                "university_id": "anadolu-university",
                 "name": "Social Services",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -1859,32 +1573,6 @@
                 "priority": null,
                 "slug": "social-services",
                 "internal_url": "social-services.html"
-            },
-            {
-                "university_id": "anadolu-university",
-                "name": "Social Services",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 years",
-                "tuition": "45,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "social-services",
-                "internal_url": "social-services.html"
-            },
-            {
-                "university_id": "anadolu-university",
-                "name": "Special Education",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 years",
-                "tuition": "45,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "special-education",
-                "internal_url": "special-education.html"
             },
             {
                 "university_id": "anadolu-university",
@@ -1914,19 +1602,6 @@
             },
             {
                 "university_id": "anadolu-university",
-                "name": "Tour Guiding",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 years",
-                "tuition": "50,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "tour-guiding",
-                "internal_url": "tour-guiding.html"
-            },
-            {
-                "university_id": "anadolu-university",
                 "name": "Tourism Management",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -1937,32 +1612,6 @@
                 "priority": null,
                 "slug": "tourism-management",
                 "internal_url": "tourism-management.html"
-            },
-            {
-                "university_id": "anadolu-university",
-                "name": "Tourism Management",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 years",
-                "tuition": "50,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "tourism-management",
-                "internal_url": "tourism-management.html"
-            },
-            {
-                "university_id": "anadolu-university",
-                "name": "Turkish and Social Sciences Education",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 years",
-                "tuition": "45,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "turkish-and-social-sciences-education",
-                "internal_url": "turkish-and-social-sciences-education.html"
             },
             {
                 "university_id": "anadolu-university",

@@ -31,12 +31,6 @@
   box-sizing: border-box;
 }
 
-.icon::before {
-  display: inline-block;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-}
-
 body {
   font-family: 'Open Sans', sans-serif;
   line-height: 1.6;
