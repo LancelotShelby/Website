@@ -1342,19 +1342,6 @@
             },
             {
                 "university_id": "anadolu-university",
-                "name": "Educational Sciences",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 years",
-                "tuition": "45,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "educational-sciences",
-                "internal_url": "educational-sciences.html"
-            },
-            {
-                "university_id": "anadolu-university",
                 "name": "Fine Arts Education",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -26569,19 +26556,6 @@
             },
             {
                 "university_id": "tokat-university",
-                "name": "Agriculture Economics",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 Years",
-                "tuition": "40,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "agriculture-economics",
-                "internal_url": "agriculture-economics.html"
-            },
-            {
-                "university_id": "tokat-university",
                 "name": "Architecture",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -26608,19 +26582,6 @@
             },
             {
                 "university_id": "tokat-university",
-                "name": "Banking and Insurance",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 Years",
-                "tuition": "35,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "banking-and-insurance",
-                "internal_url": "banking-and-insurance.html"
-            },
-            {
-                "university_id": "tokat-university",
                 "name": "Biology",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -26631,19 +26592,6 @@
                 "priority": null,
                 "slug": "biology",
                 "internal_url": "biology.html"
-            },
-            {
-                "university_id": "tokat-university",
-                "name": "Biosystems Engineering",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 Years",
-                "tuition": "40,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "biosystems-engineering",
-                "internal_url": "biosystems-engineering.html"
             },
             {
                 "university_id": "tokat-university",
@@ -26842,19 +26790,6 @@
             },
             {
                 "university_id": "tokat-university",
-                "name": "Field Crops",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 Years",
-                "tuition": "40,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "field-crops",
-                "internal_url": "field-crops.html"
-            },
-            {
-                "university_id": "tokat-university",
                 "name": "Food Engineering",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -26865,19 +26800,6 @@
                 "priority": null,
                 "slug": "food-engineering",
                 "internal_url": "food-engineering.html"
-            },
-            {
-                "university_id": "tokat-university",
-                "name": "Gastronomy and Culinary Arts",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 Years",
-                "tuition": "35,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "gastronomy-and-culinary-arts",
-                "internal_url": "gastronomy-and-culinary-arts.html"
             },
             {
                 "university_id": "tokat-university",
@@ -26985,32 +26907,6 @@
             },
             {
                 "university_id": "tokat-university",
-                "name": "Horticulture",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 Years",
-                "tuition": "40,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "horticulture",
-                "internal_url": "horticulture.html"
-            },
-            {
-                "university_id": "tokat-university",
-                "name": "International Trade and Logistics",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 Years",
-                "tuition": "35,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "international-trade-and-logistics",
-                "internal_url": "international-trade-and-logistics.html"
-            },
-            {
-                "university_id": "tokat-university",
                 "name": "International Trade and Logistics",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -27073,32 +26969,6 @@
                 "priority": null,
                 "slug": "medicine",
                 "internal_url": "medicine.html"
-            },
-            {
-                "university_id": "tokat-university",
-                "name": "Medicine",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "6 Years",
-                "tuition": "200,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "medicine",
-                "internal_url": "medicine.html"
-            },
-            {
-                "university_id": "tokat-university",
-                "name": "Midwifery",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 Years",
-                "tuition": "40,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "midwifery",
-                "internal_url": "midwifery.html"
             },
             {
                 "university_id": "tokat-university",
@@ -27177,32 +27047,6 @@
                 "priority": null,
                 "slug": "physiotherapy-and-rehabilitation",
                 "internal_url": "physiotherapy-and-rehabilitation.html"
-            },
-            {
-                "university_id": "tokat-university",
-                "name": "Physiotherapy and Rehabilitation",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 Years",
-                "tuition": "40,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "physiotherapy-and-rehabilitation",
-                "internal_url": "physiotherapy-and-rehabilitation.html"
-            },
-            {
-                "university_id": "tokat-university",
-                "name": "Plant Protection",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 Years",
-                "tuition": "40,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "plant-protection",
-                "internal_url": "plant-protection.html"
             },
             {
                 "university_id": "tokat-university",
@@ -27297,19 +27141,6 @@
             },
             {
                 "university_id": "tokat-university",
-                "name": "Recreation",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 Years",
-                "tuition": "35,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "recreation",
-                "internal_url": "recreation.html"
-            },
-            {
-                "university_id": "tokat-university",
                 "name": "Science Teacher Education",
                 "degree": "Bachelor",
                 "language": "Turkish",
@@ -27333,19 +27164,6 @@
                 "priority": null,
                 "slug": "social-studies-teaching",
                 "internal_url": "social-studies-teaching.html"
-            },
-            {
-                "university_id": "tokat-university",
-                "name": "Soil Science and Plant Nutrition",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 Years",
-                "tuition": "40,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "soil-science-and-plant-nutrition",
-                "internal_url": "soil-science-and-plant-nutrition.html"
             },
             {
                 "university_id": "tokat-university",
@@ -27411,19 +27229,6 @@
                 "priority": null,
                 "slug": "turkish-language-and-literature",
                 "internal_url": "turkish-language-and-literature.html"
-            },
-            {
-                "university_id": "tokat-university",
-                "name": "Zootechnics",
-                "degree": "Bachelor",
-                "language": "Turkish",
-                "duration": "4 Years",
-                "tuition": "40,000 TL",
-                "requirements": null,
-                "details": null,
-                "priority": null,
-                "slug": "zootechnics",
-                "internal_url": "zootechnics.html"
             },
             {
                 "university_id": "tokat-university",
