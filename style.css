@@ -56,11 +56,12 @@ header {
 }
 
 .logo img {
-  height: 60px;
-  background: var(--card-bg);
-  padding: 5px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+  height: 80px;
+  margin-left: 40px;
+  /*background: var(--card-bg);*/
+  /*padding: 5px;*/
+  /*border-radius: 10px;*/
+  /*box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);*/
 }
 
 /* Navigation */
