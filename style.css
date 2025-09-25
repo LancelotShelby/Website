@@ -44,7 +44,7 @@ body {
 
 /* Header */
 header {
-  background-color: var(--primary);
+  background-color: var(--background-lighter);
   color: var(--text-light);
   display: flex;
   justify-content: space-between;
@@ -76,7 +76,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: var(--text-light);
+  color: var(--primary-darker);
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
