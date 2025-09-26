@@ -198,6 +198,11 @@ nav ul li a {
   color: inherit;
 }
 
+.feature {
+  text-decoration: none;
+  color: inherit;
+}
+
 .country-showcase .country-card {
   background-color: var(--background-light);
   border-radius: 12px;
