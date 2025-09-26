@@ -36,7 +36,7 @@ body {
   line-height: 1.6;
   color: var(--text);
   background-color: var(--background);
-  overflow-x: hidden;
+  overflow-x: hidden; /* Prevent horizontal scroll on small devices */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -49,10 +49,11 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 3rem;
+  padding: 1rem 1.5rem; /* Adjusted padding for smaller screens */
   position: sticky;
   top: 0;
   z-index: 1000;
+  flex-wrap: wrap; /* Allow logo and nav to wrap if needed */
 }
 
 .logo img {
@@ -137,21 +138,23 @@ nav ul li a {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(rgba(22, 211, 201, 0.85), rgba(3, 126, 107, 0.85)), url('images/hero-bg.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(22, 211, 201, 0.85), rgba(3, 126, 107, 0.85)), url('images/hero-bg.jpg') center/cover no-repeat fixed; /* Added fixed for parallax-like effect */
+  background-size: cover; /* Ensure image covers the area */
   color: var(--text-light);
-  padding: 6rem 2rem;
+  padding: 4rem 1.5rem; /* Adjusted padding for mobile */
   text-align: center;
 }
 
 .hero-text h1 {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 2.5rem; /* Adjusted for mobile */
   margin-bottom: 1rem;
+  word-break: break-word; /* Prevent long words from overflowing */
 }
 
 .hero-text p {
-  font-size: 1.25rem;
+  font-size: 1.1rem; /* Adjusted for mobile */
   margin-bottom: 2rem;
   max-width: 600px;
   margin-left: auto;
@@ -161,11 +164,11 @@ nav ul li a {
 .cta-btn {
   background-color: var(--accent);
   color: var(--text-light);
-  padding: 0.75rem 2rem;
+  padding: 0.75rem 1.5rem; /* Adjusted padding */
   border-radius: 30px;
   font-weight: 600;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1rem; /* Adjusted for mobile */
   transition: background-color 0.3s ease;
   margin: 0 0.5rem;
   text-align: center;
@@ -188,6 +191,11 @@ nav ul li a {
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
+}
+
+.country-card-link {
+  text-decoration: none;
+  color: inherit;
 }
 
 .country-showcase .country-card {

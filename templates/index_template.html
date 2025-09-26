@@ -5,7 +5,7 @@
   <title>Kola El Bahari Consulting</title>
   <link rel="stylesheet" href="../../style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a2c8f4a12c.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/510ddeed29.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -25,33 +25,33 @@
             <section class="why-choose">
                 <h2>Why Choose Us?</h2>
                 <div class="features">
-                    <div class="feature">
+                    <a href="reach.html" class="feature">
                         <i class="fas fa-globe"></i>
                         <h3>Global Reach</h3>
                         <p>We connect you with universities across the world.</p>
-                    </div>
-                    <div class="feature">
+                    </a>
+                    <a href="student-focused.html" class="feature">
                         <i class="fas fa-user-graduate"></i>
                         <h3>Student Focused</h3>
                         <p>Personalized guidance tailored to your academic goals.</p>
-                    </div>
-                    <div class="feature">
+                    </a>
+                    <a href="trusted-support.html" class="feature">
                         <i class="fas fa-handshake"></i>
                         <h3>Trusted Support</h3>
                         <p>Reliable, ethical, and always available to help.</p>
-                    </div>
+                    </a>
                 </div>
             </section>
 
             <section class="country-showcase">
                 <h2>Explore Countries & Requirements</h2>
                 <div class="country-grid">{% for country_name, types in country_universities_by_type.items() %}{% set country_slug = country_name|slugify %}
-                    <div class="country-card-link">
+                    <a href="unis/{{ country_slug }}/{{ country_slug }}.html" class="country-card-link">
                         <div class="country-card">
                         <h3>{{ country_name }}</h3>
-                        <p>Discover universities, check the requirements, and</p><h5><a href="unis/{{ country_slug }}/{{ country_slug }}.html">learn more.</a></h5>
+                        <p>Discover universities and check the requirements.</p>
                         </div>
-                    </div>{% endfor %}
+                    </a>{% endfor %}
                 </div>
             </section>
 
