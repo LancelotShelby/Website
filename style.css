@@ -350,6 +350,20 @@ nav ul li a {
   color: inherit;
 }
 
+.student-focused-page-main {
+  background: linear-gradient(var(--primary), var(--primary-dark));
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--text-light);
+}
+.student-focused-page-main .info-section-1,
+.student-focused-page-main .info-section-2,
+.student-focused-page-main .info-section-3 {
+  padding: 2rem 0;
+  color: var(--text-light);
+  height: max-content;
+}
+
 /* Testimonials */
 .testimonials {
   background: linear-gradient(to right, var(--primary), var(--primary-darker));
