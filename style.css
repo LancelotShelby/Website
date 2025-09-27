@@ -51,9 +51,9 @@ header {
     
     /* --- GRADIENT BACKGROUND --- */
     /* Syntax: linear-gradient(to <direction>, <color1> <stop>, <color2> <stop>, ...) */
-    background-image: linear-gradient(to left, var(--primary), var(--background));
+    background-image: linear-gradient(to left, var(--primary) 15%, var(--background) 70%);
     /* Fallback for browsers that don't support gradients */
-    background-color: #007bff; 
+    background-color: var(--primary);
     
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: relative;
