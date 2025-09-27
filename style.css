@@ -190,9 +190,9 @@ nav ul li a {
 /* ========================================================== */
 
 .country-showcase {
-  background-color: var(--card-bg);
-  padding: 4rem 2rem;
-  text-align: center;
+    background: linear-gradient(to left, var(--primary), var(--primary-darker));
+    padding: 3rem 2rem;
+    text-align: center;
 }
 
 .country-showcase h2 {
