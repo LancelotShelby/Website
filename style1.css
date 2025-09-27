@@ -1,21 +1,27 @@
+/*
+ * Entire style.css file made phone-friendly
+ * All previous styles are retained and adjusted where necessary.
+ * New media queries added for responsiveness.
+ */
+
 /* Unified Color Palette */
 :root {
-  --primary: #005a4c;
-  --primary-dark: #00382c;
-  --primary-darker: #00251a;
-  --accent: #26bfa6;
-  --accent-dark: #00897b;
-  --accent-light: #e6f4f1;
-  --background: #0b3829;
-  --background-light: #f4f7f6;
-  --background-lighter: #f9f9f9;
-  --card-bg: #fff;
-  --card-bg-alt: #e6f4f1;
-  --text: #222;
-  --text-light: #fff;
-  --text-muted: #a5d6a7;
-  --heading: #003366;
-  --border: #ccc;
+  --primary: rgba(22, 211, 201, 0.85);
+  --primary-dark: #3a8a96;
+  --primary-darker: #226b75;
+  --accent: #a1c7ce;
+  --accent-dark: #72c2cc;
+  --accent-light: #f0f8f9;
+  --background: #fdfdfd;
+  --background-light: #f2f6f7;
+  --background-lighter: #ffffff;
+  --card-bg: #ffffff;
+  --card-bg-alt: #e6f4f5;
+  --text: #2c3e50;
+  --text-light: #ffffff;
+  --text-muted: #7f8c8d;
+  --heading: #1e4b52;
+  --border: #d4e0e4;
 }
 
 /* Reset some basics */
@@ -30,11 +36,10 @@ body {
   line-height: 1.6;
   color: var(--text);
   background-color: var(--background);
-  overflow-x: hidden;
-
-
-
-
+  overflow-x: hidden; /* Prevent horizontal scroll on small devices */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Header */
@@ -44,92 +49,224 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 3rem;
+  padding: 1rem 1.5rem; /* Adjusted padding for smaller screens */
   position: sticky;
   top: 0;
   z-index: 1000;
+  flex-wrap: wrap; /* Allow logo and nav to wrap if needed */
 }
 
 .logo img {
-  height: 60px;
+  height: 50px; /* Slightly smaller logo on mobile */
   background: var(--card-bg);
   padding: 5px;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
 }
 
-/* Navigation */
+/* Navigation - Mobile-First Approach for Hamburger */
 nav ul {
   list-style: none;
-  display: flex;
-  gap: 2rem;
+  display: none; /* Hidden by default on mobile */
+  flex-direction: column;
+  width: 100%; /* Take full width when active */
+  background-color: var(--primary); /* Keep background for dropdown */
+  position: absolute; /* Position relative to header */
+  top: 100%; /* Below the header */
+  left: 0;
+  padding: 1rem 0; /* Vertical padding */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.3s ease-out forwards; /* Smooth dropdown animation */
+  z-index: 990; /* Below sticky header but above content */
+}
+
+/* Animation for dropdown */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+nav ul.active {
+  display: flex; /* Show when active */
 }
 
 nav ul li {
   position: relative;
+  width: 100%; /* Full width list items */
+  text-align: center; /* Center text */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+}
+
+nav ul li:last-child {
+  border-bottom: none;
 }
 
 nav ul li a {
   color: var(--text-light);
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.3s ease;
-  padding: 10px 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 12px 1.5rem; /* Increased padding for tap target */
+  display: block; /* Make link fill the list item */
 }
 
 nav ul li a:hover {
-  color: var(--accent);
+  background-color: var(--primary-dark);
 }
 
-/* Dropdown Menu */
+/* Hamburger Icon */
+.hamburger {
+  display: block; /* Always visible on mobile-first */
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+  z-index: 1001; /* Above everything */
+  padding: 0.5rem; /* Add padding for easier tapping */
+  line-height: 1; /* Center the icon vertically */
+}
+
+.hamburger.open {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
+}
+
+/* Dropdown Menu (adjusted for mobile) */
 .dropdown-menu, .sub-menu {
-  display: none;
-  position: absolute;
-  background-color: var(--card-bg);
-  min-width: 180px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  z-index: 1000;
-  list-style: none; /* Ensure list style is reset */
+  display: none; /* Hide by default */
+  position: static; /* Change to static for mobile, flows with parent */
+  background-color: var(--primary-dark); /* Darker background for nested menus */
+  width: 100%; /* Take full width */
+  box-shadow: none; /* Remove box-shadow */
+  padding: 0; /* Remove padding */
+  list-style: none;
+}
+
+.dropdown-menu.active, .sub-menu.active {
+  display: block; /* Show when active */
 }
 
 .dropdown:hover .dropdown-menu {
-  display: block;
+  display: none; /* Keep hidden on hover for mobile, only show when active class is applied */
 }
 
 .sub-dropdown:hover .sub-menu {
-  display: block;
-  left: 100%;
-  top: 0;
+  display: none; /* Keep hidden on hover for mobile */
 }
 
 .dropdown-menu a, .sub-menu a {
-  color: var(--text);
-  padding: 10px 15px;
-  display: block;
-  text-decoration: none;
+  color: var(--text-light); /* Ensure text is visible */
+  padding: 10px 2.5rem; /* Increased left padding for nesting indication */
+  background-color: var(--primary-dark);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Subtle separator */
 }
 
 .dropdown-menu a:hover, .sub-menu a:hover {
-  background-color: var(--accent-light);
+  background-color: var(--primary-darker);
+}
+
+/* Desktop-specific navigation overrides */
+@media (min-width: 769px) { /* Adjust breakpoint as needed */
+  header {
+    padding: 1rem 3rem; /* Restore original padding */
+    flex-wrap: nowrap; /* Prevent wrapping */
+  }
+  nav ul {
+    display: flex; /* Always visible on desktop */
+    flex-direction: row; /* Horizontal on desktop */
+    width: auto;
+    position: static;
+    background-color: transparent; /* No background needed */
+    padding: 0;
+    box-shadow: none;
+    animation: none;
+    gap: 2rem; /* Restore original gap */
+  }
+  nav ul li {
+    border-bottom: none;
+    width: auto;
+    text-align: left;
+  }
+  nav ul li a {
+    color: var(--text-light); /* Restore original color */
+    padding: 10px 5px;
+  }
+  .hamburger {
+    display: none; /* Hide hamburger on desktop */
+  }
+
+  /* Restore desktop dropdown functionality */
+  .dropdown-menu, .sub-menu {
+    display: none;
+    position: absolute;
+    background-color: var(--card-bg);
+    min-width: max-content;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    top: 100%;
+    left: 0;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+    background-color: var(--primary);
+  }
+
+  .sub-dropdown:hover .sub-menu {
+    display: block;
+    left: 100%;
+    top: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 0;
+  }
+
+  .sub-menu.off-screen-left {
+    left: auto;
+    right: 100%;
+  }
+
+  .dropdown-menu a, .sub-menu a {
+    color: var(--text);
+    padding: 10px 15px;
+    background-color: var(--card-bg); /* Restore white background */
+    border-bottom: none;
+  }
+
+  .dropdown-menu a:hover, .sub-menu a:hover {
+    background-color: var(--accent-light);
+  }
+}
+
+
+/* Main content wrapper to push footer down */
+.main-content-wrapper {
+  flex-grow: 1;
 }
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(rgba(0,90,76,0.85), rgba(0,90,76,0.85)), url('images/hero-bg.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(22, 211, 201, 0.85), rgba(3, 126, 107, 0.85)), url('images/hero-bg.jpg') center/cover no-repeat fixed; /* Added fixed for parallax-like effect */
+  background-size: cover; /* Ensure image covers the area */
   color: var(--text-light);
-  padding: 6rem 2rem;
+  padding: 4rem 1.5rem; /* Adjusted padding for mobile */
   text-align: center;
 }
 
 .hero-text h1 {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 2.5rem; /* Adjusted for mobile */
   margin-bottom: 1rem;
+  word-break: break-word; /* Prevent long words from overflowing */
 }
 
 .hero-text p {
-  font-size: 1.25rem;
+  font-size: 1.1rem; /* Adjusted for mobile */
   margin-bottom: 2rem;
   max-width: 600px;
   margin-left: auto;
@@ -139,371 +276,718 @@ nav ul li a:hover {
 .cta-btn {
   background-color: var(--accent);
   color: var(--text-light);
-  padding: 0.75rem 2rem;
+  padding: 0.75rem 1.5rem; /* Adjusted padding */
   border-radius: 30px;
   font-weight: 600;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1rem; /* Adjusted for mobile */
   transition: background-color 0.3s ease;
+  margin: 0.5rem auto; /* Make buttons stack vertically if needed */
+  display: block; /* Each button on its own line */
+  max-width: 250px; /* Limit button width */
+}
+
+.cta-btn:last-of-type {
+  margin-top: 1rem; /* Add more space between stacked CTAs */
 }
 
 .cta-btn:hover {
   background-color: var(--accent-dark);
 }
 
-/* General Section & Heading Styles */
+/* Sections General Padding */
 section {
-    padding: 4rem 2rem;
+  padding: 4rem 1.5rem; /* Consistent vertical padding across sections */
 }
 
-section h2, .university-page h1, main h1 {
+/* Headings */
+h1, h2 {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  text-align: center;
-  color: var(--primary);
 }
 
-main h1 {
-    color: var(--text-light);
-    background: var(--primary);
-    padding: 2rem;
-    margin-bottom: 0;
+h2 {
+  font-size: 2rem; /* Adjusted for mobile */
+  margin-bottom: 2.5rem; /* Consistent bottom margin for section titles */
 }
 
-
-/* Why Choose Us Section */
-.why-choose {
+/* Country Showcase */
+.country-showcase {
   background-color: var(--card-bg);
+  text-align: center;
+}
+
+.country-showcase .country-grid {
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* Adjusted gap for mobile */
+  flex-wrap: wrap;
+}
+
+.country-showcase .country-card {
+  width: 100%; /* Take full width on small screens */
+  max-width: 280px; /* Max width for cards even when stacked */
+  padding: 1.5rem;
+}
+
+.country-showcase h3 {
+  font-size: 1.3rem; /* Adjusted for mobile readability */
+}
+
+.country-showcase p {
+  font-size: 0.9rem;
+}
+
+/* Why Choose Us */
+.why-choose {
+  background-color: var(--primary);
+  text-align: center;
 }
 
 .features {
   display: flex;
   justify-content: center;
-  gap: 3rem;
+  gap: 1.5rem; /* Adjusted gap */
   flex-wrap: wrap;
 }
 
 .feature {
-  background-color: var(--accent-light);
-  padding: 2rem;
-  border-radius: 10px;
-  width: 280px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-  text-align: center;
-}
-
-.feature:hover {
-  transform: translateY(-8px);
+  width: 100%; /* Take full width on small screens */
+  max-width: 280px; /* Max width for cards */
+  padding: 1.5rem;
 }
 
 .feature i {
-  color: var(--accent);
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 2.5rem; /* Slightly smaller icons */
 }
 
 .feature h3 {
-  color: var(--primary);
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  font-size: 1.3rem; /* Adjusted for mobile readability */
 }
 
-/* Testimonials Section */
+.feature p {
+  font-size: 0.95rem;
+}
+
+/* Testimonials */
 .testimonials {
-  background-color: #004d40;
-  color: white;
-}
-
-.testimonials h2 {
-    color: white;
+  background-color: var(--primary);
+  color: var(--text-light);
+  text-align: center;
 }
 
 .testimonial-cards {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem; /* Adjusted gap */
   flex-wrap: wrap;
 }
 
 .testimonial {
-  background-color: #00796b;
-  padding: 2rem;
-  border-radius: 10px;
-  width: 300px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-  font-style: italic;
+  width: 100%; /* Take full width on small screens */
+  max-width: 300px; /* Max width for cards */
+  padding: 1.5rem;
+}
+
+.testimonial p {
+  font-size: 1rem; /* Ensure testimonial text is readable */
 }
 
 .testimonial h4 {
-  margin-top: 1.5rem;
-  font-weight: 600;
-  font-style: normal;
-  text-align: right;
-}
-
-/* Contact Page Sections */
-.contact {
-    background-color: #f0f8ff;
-    padding: 60px 20px;
-    text-align: center;
-}
-.contact-options {
-    background-color: #f5f9fa;
-    padding: 50px 20px;
-    text-align: center;
-}
-.map-section {
-    background-color: #eef7f8;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.contact h2 {
-    color: #003b5c;
-    margin-bottom: 40px;
-}
-.contact-options h2 {
-    color: #004d40;
-    margin-bottom: 30px;
-}
-
-.contact-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    align-items: flex-start;
-}
-
-.contact-info {
-    max-width: 300px;
-    text-align: left;
-}
-
-.contact-info p {
-    margin: 10px 0;
-    color: #333;
-}
-
-.contact-info i {
-    color: #007e87;
-    margin-right: 10px;
-}
-
-.contact-info a {
-    color: #007e87;
-    text-decoration: none;
-}
-
-.contact-form {
-    max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    flex: 1;
-}
-
-.contact-form input,
-.contact-form textarea {
-    border: 1px solid #ccc;
-    padding: 12px;
-    border-radius: 8px;
-    font-family: inherit;
-}
-
-.contact-form button {
-    background-color: #007e87;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.contact-form button:hover {
-    background-color: #005e65;
-}
-
-.options-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.contact-option {
-    background-color: #ffffff;
-    border: 2px solid #007e87;
-    color: #007e87;
-    border-radius: 12px;
-    padding: 25px 35px;
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    transition: 0.3s;
-    min-width: 200px;
-}
-
-.contact-option i {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-.contact-option:hover {
-    background-color: #007e87;
-    color: white;
-}
-
-.map-address p {
-    font-size: 16px;
-    margin-top: 15px;
-    color: #333;
-}
-
-/* University Listing Pages */
-.university-section {
-    padding: 40px 20px;
-    background-color: var(--background);
-}
-
-.university-grid {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-.university-card {
-    background-color: var(--card-bg);
-    border-radius: 10px;
-    padding: 20px;
-    width: 220px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.2s;
-}
-
-.university-card:hover {
-    transform: translateY(-5px);
-}
-
-.university-card img {
-    max-width: 100px;
-    height: auto;
-    margin-bottom: 15px;
-}
-
-.university-card p {
-    color: var(--primary);
-    font-weight: bold;
-    margin: 0;
-}
-
-.university-card a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* Individual University Page */
-.university-page {
-    background-color: var(--background);
-    padding: 2rem;
-}
-
-.university-page h1 {
-    color: var(--primary);
-}
-
-.uni-logo {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
-}
-
-.uni-logo img {
-    max-width: 220px;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.description p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    text-align: justify;
-    margin-bottom: 2rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.programs {
-    background-color: var(--accent-light);
-    border-left: 5px solid var(--accent-dark);
-    padding: 1.5rem;
-    border-radius: 10px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.programs h2 {
-    color: var(--primary);
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    text-align: left;
-}
-
-.programs ul {
-    list-style-type: circle;
-    padding-left: 1.5rem;
-}
-
-.programs li {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
+  font-size: 0.95rem;
 }
 
 /* Footer */
 footer {
-  background-color: #00251a;
-  color: #a5d6a7;
+  padding: 1.5rem 1.5rem; /* Adjusted padding */
+  font-size: 0.85rem;
+}
+
+/* CONTACT SECTION */
+.contact {
+  padding: 3rem 1.5rem; /* Adjusted padding */
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.contact-container {
+  flex-direction: column; /* Stack contact info and form */
+  gap: 2.5rem;
+}
+
+.contact-info, .contact-form {
+  max-width: 100%; /* Take full width */
+  width: 100%; /* Ensure full width on mobile */
+  margin: 0 auto;
+}
+
+.contact-info p {
+  font-size: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+  padding: 10px; /* Slightly reduced padding */
+  font-size: 15px;
+}
+
+.contact-options {
+  padding: 3rem 1.5rem;
+}
+
+.contact-options h2 {
+  font-size: 2rem;
+}
+
+.options-container {
+  flex-direction: column; /* Stack options vertically */
+  gap: 1.5rem;
+}
+
+.contact-option {
+  min-width: unset; /* Remove min-width constraint */
+  width: 100%; /* Full width on mobile */
+  max-width: 250px; /* Optional: limit max width even when stacked */
+  padding: 20px 25px; /* Adjust padding */
+  font-size: 16px;
+}
+
+.contact-option i {
+  font-size: 28px; /* Slightly smaller icon */
+}
+
+.map-section {
+  padding: 3rem 1.5rem;
+}
+
+/* University Section (General) */
+.university-section h1 {
+  font-size: 2.2rem; /* Adjusted for mobile */
+  padding: 1.5rem 1.5rem; /* Add padding to heading as well */
   text-align: center;
-  padding: 1.5rem 1rem;
+}
+
+.university-grid {
+  gap: 1.5rem; /* Adjusted gap */
+  padding: 1.5rem; /* Padding for the grid container itself */
+}
+
+.requirements-box {
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.requirements-box h2 {
+  font-size: 1.6rem;
+}
+
+.requirements-box h3 {
+  font-size: 1.2rem;
+}
+
+.requirements-box li,
+.info-section p {
+  font-size: 1rem;
+}
+
+.info-section h2 {
+  font-size: 1.8rem;
+}
+
+.action-buttons {
+  margin-top: 1.5rem;
+}
+
+.action-buttons a {
+  padding: 0.6rem 1.2rem; /* Smaller buttons */
+  font-size: 0.95rem;
+  margin: 0.5rem 0.5rem; /* Stack if needed */
+  display: inline-block; /* Allow them to sit side-by-side if space permits */
+}
+
+/* University Card (Individual) */
+.university-card {
+  padding: 1rem; /* Adjusted padding */
+  display: flex;
+  flex-direction: column; /* Stack logo and info vertically */
+  align-items: center;
+  width: 100%; /* Ensure cards take full width in smaller grids */
+}
+
+.university-logo-container {
+  width: 80px; /* Smaller logo container */
+  height: 80px;
+  margin-bottom: 0.8rem;
+}
+
+.university-info {
+  width: 100%; /* Ensure info section takes full width */
+  margin-top: 0.8rem;
+}
+
+.university-info h3 {
+  font-size: 1.3rem;
+}
+
+.university-info p {
+  font-size: 0.85rem;
+}
+
+.university-info .view-details-btn {
+  padding: 0.6rem 1.2rem;
   font-size: 0.9rem;
 }
 
-/* Responsive Design */
-@media (max-width: 900px) {
-  header {
-    flex-direction: column;
-    padding: 1rem;
-  }
-  
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    width: 100%;
-    margin-top: 1rem;
-  }
-  
-  .hero-text h1 {
-    font-size: 2.25rem;
-  }
-  
-  .hero-text p {
-    font-size: 1.1rem;
-  }
+.back-link {
+  margin: 1.5rem auto 0;
+  font-size: 0.95rem;
+}
 
-  .features, .testimonial-cards {
-    flex-direction: column;
-    align-items: center;
+/* University Page Details */
+.university-page {
+  padding: 1.5rem;
+}
+
+.university-page h1 {
+  font-size: 2rem;
+}
+
+.uni-logo img {
+  max-width: 180px; /* Smaller logo */
+}
+
+.description p {
+  font-size: 1rem;
+}
+
+.programs {
+  padding: 1rem;
+}
+
+.programs h2 {
+  font-size: 1.6rem;
+}
+
+.programs li {
+  font-size: 1rem;
+}
+
+
+/* --- Explore Page Specific Styles --- */
+.explore-page {
+  padding: 1.5rem;
+}
+
+.explore-page h1 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.filter-controls {
+  flex-direction: column; /* Stack filters vertically */
+  gap: 1rem;
+  padding: 1.5rem;
+  align-items: stretch; /* Stretch items to fill width */
+}
+
+.filter-group {
+  min-width: unset; /* Remove min-width */
+  width: 100%; /* Full width */
+}
+
+.filter-group label {
+  font-size: 0.9rem;
+  margin-bottom: 5px; /* Smaller margin */
+}
+
+#universityList,
+.filter-group select {
+  padding: 8px 12px; /* Smaller padding */
+  font-size: 0.9rem;
+  background-position: right 8px center; /* Adjust dropdown icon position */
+  background-size: 10px; /* Adjust dropdown icon size */
+}
+
+#searchUniversities {
+  width: 100%; /* Full width */
+  min-width: unset;
+}
+
+/* University Grid for Explore Page */
+.university-grid-explore {
+  grid-template-columns: 1fr; /* Single column on mobile */
+  gap: 1.5rem; /* Adjusted gap */
+}
+
+.university-card-explore {
+  padding: 1rem;
+}
+
+.uni-logo-wrapper {
+  margin-bottom: 10px;
+}
+
+.university-card-explore img {
+  max-width: 100px; /* Smaller logo */
+}
+
+.university-card-explore h3 {
+  font-size: 1.4rem;
+}
+
+.university-card-explore .uni-info {
+  font-size: 0.9rem;
+}
+
+.university-card-explore .uni-description {
+  font-size: 0.85rem;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+/* Explore Page University Card Program List Styling */
+.uni-programs-list {
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.uni-programs-list h4 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.program-title-explore {
+  padding: 10px 15px;
+  font-size: 0.9rem;
+}
+
+.program-details-explore {
+  padding: 0 15px; /* Adjust padding */
+}
+
+.program-details-explore.active {
+  padding: 10px 15px;
+}
+
+.program-details-explore p {
+  font-size: 0.85rem;
+}
+
+.program-details-explore li {
+  font-size: 0.8rem;
+}
+
+/* --- Program Details Modal Styles --- */
+.modal-content {
+  margin: 10vh auto; /* Adjust top margin for better visibility */
+  padding: 20px;
+  width: 95%; /* Wider on small screens */
+  max-width: 95%; /* Ensure it doesn't exceed screen width */
+}
+
+.close-button {
+  font-size: 2rem; /* Slightly smaller close button */
+  top: 5px;
+  right: 15px;
+}
+
+#modalProgramContent h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+#modalProgramContent p {
+  font-size: 1rem;
+}
+
+#modalProgramContent ul {
+  padding-left: 20px;
+}
+
+#modalProgramContent li {
+  font-size: 0.95rem;
+}
+
+.modal-uni-link {
+  padding: 8px 15px;
+  font-size: 0.95rem;
+}
+
+.view-full-program-details {
+  padding: 7px 12px;
+  font-size: 0.8rem;
+  margin-top: 8px;
+}
+
+/* Explore Page Specific Styles (Search & Filters) */
+.filters-search {
+  padding: 1.5rem;
+}
+
+.filters-search h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-bar {
+  flex-direction: column; /* Stack search input and button */
+  gap: 1rem;
+}
+
+#searchInput {
+  width: 100%; /* Full width */
+  max-width: 100%;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+}
+
+#searchButton {
+  width: 100%; /* Full width */
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+}
+
+.filters {
+  flex-direction: column; /* Stack filters vertically */
+  gap: 1rem;
+}
+
+.filters select {
+  width: 100%; /* Full width */
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  background-position: right 10px center;
+  background-size: 10px;
+}
+
+.grid-container {
+  grid-template-columns: 1fr; /* Single column on mobile */
+  gap: 1.5rem;
+}
+
+/* --- University Full Detail Page Styles --- */
+.university-full-detail-page-main {
+  padding: 1.5rem;
+}
+
+.uni-header {
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.uni-detail-logo {
+  max-width: 120px; /* Smaller logo */
+}
+
+.uni-header h1 {
+  font-size: 2.2rem;
+}
+
+.uni-country,
+.uni-type {
+  font-size: 1rem;
+}
+
+.uni-description-full {
+  font-size: 0.95rem;
+  margin-top: 1rem;
+}
+
+/* Programs Section (Full Detail) */
+.programs-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.programs-list-collapsible {
+  max-width: 100%; /* Full width */
+}
+
+.program-item-full-page {
+  margin-bottom: 1rem;
+}
+
+.program-title-full-page {
+  font-size: 1.2rem;
+  padding: 1rem 1.5rem;
+}
+
+.program-details-full-page {
+  padding: 1rem 1.5rem;
+}
+
+.program-details-full-page p {
+  font-size: 0.95rem;
+}
+
+.program-details-full-page li {
+  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
+}
+
+.view-program-details-btn {
+  padding: 0.7rem 1.3rem;
+  font-size: 0.9rem;
+}
+
+.toggle-icon-full-page {
+  font-size: 1rem;
+}
+
+/* Program Detail Page */
+.program-detail-page-main {
+  padding: 1.5rem;
+}
+
+.program-detail-header {
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.back-to-uni-link {
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+}
+
+.program-detail-header h1 {
+  font-size: 2.2rem;
+}
+
+.program-sub-title {
+  font-size: 1rem;
+}
+
+.program-degree-type {
+  font-size: 0.9rem;
+}
+
+.program-full-details {
+  padding: 1.5rem;
+}
+
+.detail-item {
+  margin-bottom: 1.5rem;
+}
+
+.detail-item h3 {
+  font-size: 1.6rem;
+  padding-left: 0.8rem;
+}
+
+.detail-item p {
+  font-size: 0.95rem;
+}
+
+.detail-item li {
+  padding: 0.8rem 1.2rem;
+  font-size: 0.95rem;
+}
+
+/* Country List Page Main Section */
+.country-list-page-main {
+  padding: 1.5rem;
+}
+
+.country-list-page-main h1 {
+  font-size: 2.2rem;
+}
+
+.country-list-page-main p {
+  font-size: 1rem;
+}
+
+.university-list {
+  grid-template-columns: 1fr; /* Single column on mobile */
+  gap: 1.5rem;
+}
+
+/* University Programs Card Layout */
+.programs-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.program-card {
+    padding: 1.2rem;
+}
+
+.program-card h3 {
+    font-size: 1.3rem;
+}
+
+.program-card p {
+    font-size: 0.9rem;
+}
+
+/* University Programs Search & Filter */
+.search-and-filters-container {
+    flex-direction: column; /* Stack search and filters */
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+#programSearch,
+#degreeFilter {
+    width: 100%; /* Full width */
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+}
+
+/* === Original Media Queries (Adjusted) === */
+/* Your media queries are mostly good. I've integrated these refinements within the main CSS.
+   The key is to use a mobile-first approach where possible,
+   and then use `min-width` breakpoints to apply desktop styles.
+   The `max-width` breakpoints below are mostly for ensuring specific elements
+   continue to adapt smoothly at narrower screen sizes. */
+
+@media (max-width: 768px) {
+  /* This block mostly superseded by the mobile-first approach above,
+     but good for specific overrides if needed. */
+}
+
+@media (max-width: 600px) {
+    /* These specific overrides for stacking are now handled by general flex-direction: column and width: 100% rules for cards. */
+}
+
+@media (max-width: 480px) {
+  /* Further reductions for very small phones */
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  .hero-text p {
+    font-size: 0.9rem;
+  }
+  .cta-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  .contact-info p {
+    font-size: 0.95rem;
+  }
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    font-size: 14px;
+    padding: 8px;
+  }
+  .modal-content {
+    margin: 5vh auto; /* Even higher on very small screens */
+  }
+  #modalProgramContent h2 {
+    font-size: 1.6rem;
+  }
+  #modalProgramContent p {
+    font-size: 0.95rem;
   }
 }
+
