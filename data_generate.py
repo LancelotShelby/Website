@@ -26,6 +26,9 @@ country_public_template = env.get_template('public_country_template.html')
 index_template = env.get_template('index_template.html')
 country_detail_template = env.get_template('country_detail_template.html')
 contact_template = env.get_template('contact_template.html')
+reach_template = env.get_template('reach_template.html')
+student_focused_template = env.get_template('student_focused_template.html')
+trusted_support_template = env.get_template('trusted_support_template.html')
 
 
 # --- Load Data ---
@@ -121,6 +124,27 @@ with open(index_output_path, 'w', encoding='utf-8') as f:
         relative_path_prefix=ROOT_PREFIX
     ))
 print(f"Generated {index_output_path}")
+
+with open('reach.html', 'w', encoding='utf-8') as f:
+    f.write(reach_template.render(
+        relative_path_prefix=ROOT_PREFIX,
+        country_universities_by_type=country_universities_by_type
+    ))
+print(f"Generated reach.html")
+
+with open('student_focused.html', 'w', encoding='utf-8') as f:
+    f.write(student_focused_template.render(
+        relative_path_prefix=ROOT_PREFIX,
+        country_universities_by_type=country_universities_by_type
+    ))
+print(f"Generated student_focused.html")
+
+with open('trusted_support.html', 'w', encoding='utf-8') as f:
+    f.write(trusted_support_template.render(
+        relative_path_prefix=ROOT_PREFIX,
+        country_universities_by_type=country_universities_by_type
+    ))
+print(f"Generated trusted_support.html")
 
 explore_output_path = 'explore.html'
 with open(explore_output_path, 'w', encoding='utf-8') as f:

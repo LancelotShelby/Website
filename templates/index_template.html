@@ -2,16 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kola El Bahari Consulting</title>
-  <link rel="stylesheet" href="../../style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ relative_path_prefix }}style.css">
   <script src="https://kit.fontawesome.com/510ddeed29.js" crossorigin="anonymous"></script>
-
 </head>
-<body>
-    
-{% include 'header_template.html' with context %}
-
+<body>    
+    {% include 'header_template.html' with context %}
     <div class="main-content-wrapper">
         <main>
             <section class="hero">
@@ -30,12 +27,12 @@
                         <h3>Global Reach</h3>
                         <p>We connect you with universities across the world.</p>
                     </a>
-                    <a href="student-focused.html" class="feature">
+                    <a href="student_focused.html" class="feature">
                         <i class="fas fa-user-graduate"></i>
                         <h3>Student Focused</h3>
                         <p>Personalized guidance tailored to your academic goals.</p>
                     </a>
-                    <a href="trusted-support.html" class="feature">
+                    <a href="trusted_support.html" class="feature">
                         <i class="fas fa-handshake"></i>
                         <h3>Trusted Support</h3>
                         <p>Reliable, ethical, and always available to help.</p>
