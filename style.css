@@ -44,17 +44,24 @@ body {
 
 /* Header */
 header {
-  background-color: var(--background-lighter);
-  color: var(--text-light);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 1.5rem; /* Adjusted padding for smaller screens */
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  flex-wrap: wrap; /* Allow logo and nav to wrap if needed */
-}
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    
+    /* --- GRADIENT BACKGROUND --- */
+    /* Syntax: linear-gradient(to <direction>, <color1> <stop>, <color2> <stop>, ...) */
+    background-image: linear-gradient(to left, var(--primary), var(--background));
+    /* Fallback for browsers that don't support gradients */
+    background-color: #007bff; 
+    
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    
+    /* --- IMPORTANT TEXT COLOR CHANGE --- */
+    /* Since the background is now colored, the default black/dark text may be hard to read. */
+    color: white;
+  }
 
 .logo img {
   height: 80px;
@@ -108,7 +115,7 @@ nav ul li a {
 
 .sub-dropdown:hover .sub-menu {
   display: block;
-  left: 100%;
+  left: 80px; /* Position to the right of the parent */
   top: 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-top: 0;
@@ -138,7 +145,7 @@ nav ul li a {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(rgba(22, 211, 201, 0.85), rgba(3, 126, 107, 0.85)), url('images/hero-bg.jpg') center/cover no-repeat fixed; /* Added fixed for parallax-like effect */
+  background: linear-gradient(to left, var(--primary), var(--primary-darker)), url('images/hero-bg.jpg') center/cover no-repeat fixed; /* Added fixed for parallax-like effect */
   background-size: cover; /* Ensure image covers the area */
   color: var(--text-light);
   padding: 4rem 1.5rem; /* Adjusted padding for mobile */
@@ -178,73 +185,116 @@ nav ul li a {
   background-color: var(--accent-dark);
 }
 
-/* Country Showcase */
+/* ========================================================== */
+/* HOMEPAGE COUNTRY SHOWCASE STYLING */
+/* ========================================================== */
+
 .country-showcase {
   background-color: var(--card-bg);
   padding: 4rem 2rem;
   text-align: center;
 }
 
-.country-showcase .country-grid {
-  font-size: 1.1rem;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.country-card-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-.feature {
-  text-decoration: none;
-  color: inherit;
-}
-
-.country-showcase .country-card {
-  background-color: var(--background-light);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 220px;
-  text-decoration: none;
-  color: inherit;
-  padding: 1.5rem;
-}
-
-.country-showcase .country-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
 .country-showcase h2 {
-  color: var(--heading);
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-}
-.country-showcase h3 {
-  color: var(--primary);
-  text-transform: capitalize;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--text-light);
 }
 
-.country-showcase p {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  text-decoration: none;
+.country-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
+/* Base style for all country card links */
+.country-showcase a {
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Base style for the card div itself */
+.country-card {
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: all 0.5s ease; /* Smooth transition for all changes */
+    overflow: hidden; /* Ensure the background image doesn't overflow */
+
+    /* Default (Non-Flag) Backgrounds */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Center text content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px; /* Give the card a fixed height */
+    position: relative; /* For overlay positioning */
+    z-index: 0;
+}
+/* Base style for the transition layer (flag will live here) */
+.country-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0; /* Start fully transparent (hidden) */
+    transition: opacity 0.5s ease; /* The smooth fade-in transition */
+    z-index: 1; /* Below the text content */
+}
+
+/* Text styles (ensure they are legible) */
+.country-card h3 {
+    font-size: 1.8rem;
+    color: var(--primary); /* Default text color */
+    position: relative; /* CRITICAL: Must be relative/absolute with a higher z-index */
+    z-index: 3; /* Always on top of the flag layer (z-index: 1) and overlay (z-index: 2) */
+  }
+
+.country-card p {
+    color: var(--text); /* Default text color */
+    position: relative; /* CRITICAL: Must be relative/absolute with a higher z-index */
+    z-index: 3; /* Always on top of the flag layer (z-index: 1) and overlay (z-index: 2) */
+  }
+
+/* --- HOVER EFFECT FOR EACH COUNTRY --- */
+
+/* --- Turkey Flag Hover --- */
+.country-card-turkey:hover .country-card::after {
+    background-image: url('images/flags/turkey-flag.png'); 
+    opacity: 1; /* Fade in the flag */
+}
+.country-card-turkey:hover .country-card h3,
+.country-card-turkey:hover .country-card p {
+    color: black; /* Text color change snaps instantly or uses the base transition */
+}
+
+/* --- Malaysia Flag Hover --- */
+.country-card-malaysia:hover .country-card::after {
+    background-image: url('images/flags/malaysia-flag.png'); 
+    opacity: 1; /* Fade in the flag */
+}
+.country-card-malaysia:hover .country-card h3,
+.country-card-malaysia:hover .country-card p {
+    color: black; 
+}
 
 /* Why Choose Us */
 .why-choose {
-  background-color: var(--primary);
+  background: linear-gradient(to right, var(--primary), var(--primary-darker));
   padding: 4rem 2rem;
   text-align: center;
 }
@@ -295,10 +345,14 @@ nav ul li a {
   font-size: 1rem;
 }
 
+.feature {
+  text-decoration: none;
+  color: inherit;
+}
 
 /* Testimonials */
 .testimonials {
-  background-color: var(--primary);
+  background: linear-gradient(to right, var(--primary), var(--primary-darker));
   color: var(--text-light);
   padding: 4rem 2rem;
   text-align: center;
@@ -346,13 +400,13 @@ footer {
 
 /* CONTACT SECTION */
 .contact {
-  background-color: var(--accent-light);
+  background: linear-gradient(to left, var(--primary), var(--primary-dark));
   padding: 60px 20px;
   text-align: center;
 }
 
 .contact h2 {
-  color: var(--primary);
+  color: var(--text-light);
   font-size: 28px;
   margin-bottom: 40px;
 }
@@ -372,16 +426,16 @@ footer {
 
 .contact-info p {
   margin: 10px 0;
-  color: var(--text);
+  color: var(--text-light);
 }
 
 .contact-info i {
-  color: var(--accent);
+  color: var(--text-light);
   margin-right: 10px;
 }
 
 .contact-info a {
-  color: var(--accent);
+  color: var(--text-light);
   text-decoration: none;
 }
 
@@ -1792,6 +1846,70 @@ nav ul.active {
   }
   .university-grid-explore {
     grid-template-columns: 1fr;
+  }
+  /* Apply Flag Permanently */
+  
+  /* Turkey Mobile Flag */
+  .country-card-turkey .country-card {
+      background-image: url('images/flags/turkey-flag.png');
+      background-size: cover;
+      background-position: center;
+      color: white; /* Ensure text is visible over the flag */
+      position: relative;
+  }
+
+  /* Malaysia Mobile Flag */
+  .country-card-malaysia .country-card {
+      background-image: url('images/flags/malaysia-flag.png');
+      background-size: cover;
+      background-position: center;
+      color: black; /* Use black text for Malaysia flag contrast */
+      position: relative;
+  }
+  
+  /* Apply Overlay on Mobile */
+  .country-card-turkey .country-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.3); /* Darker overlay for Turkey */
+      z-index: 1;
+  }
+  
+  .country-card-malaysia .country-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(255, 255, 255, 0.4); /* Lighter overlay for Malaysia */
+      z-index: 1;
+  }
+
+  /* Ensure text is above the mobile overlay */
+  .country-card h3, .country-card p {
+      z-index: 2; 
+  }
+
+  /* Force mobile text colors */
+  .country-card-turkey .country-card h3,
+  .country-card-turkey .country-card p {
+      color: white;
+  }
+
+  .country-card-malaysia .country-card h3,
+  .country-card-malaysia .country-card p {
+      color: black;
+  }
+
+  /* You may also want to disable the desktop hover style on mobile */
+  .country-card-turkey:hover .country-card, 
+  .country-card-malaysia:hover .country-card {
+      transform: none; /* Prevents the translateY effect on touch */
   }
 }
 
