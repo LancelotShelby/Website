@@ -91,6 +91,10 @@ nav ul li a {
   padding: 10px 5px;
 }
 
+nav ul li li a {
+  min-width: 80px;
+}
+
 /* Dropdown Menu (Desktop First) */
 .dropdown-menu, .sub-menu {
   display: none;
