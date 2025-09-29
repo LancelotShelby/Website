@@ -355,19 +355,37 @@ nav ul li li a {
 }
 
 .student-focused-page-main {
-  background: linear-gradient(var(--primary), var(--primary-dark));
-  padding: 4rem 2rem;
   text-align: center;
   color: var(--text-light);
 }
 .student-focused-page-main .info-section-1,
-.student-focused-page-main .info-section-2,
-.student-focused-page-main .info-section-3 {
+.student-focused-page-main .info-section-2 {
   padding: 2rem 0;
   color: var(--text-light);
+  font-size: larger;
   height: max-content;
 }
 
+.student-focused-page-main .info-section-1{
+    background: linear-gradient(to left, var(--primary), var(--primary-dark));
+}
+
+.student-focused-page-main .info-section-2{
+    background: linear-gradient(to right, var(--primary), var(--primary-dark));
+}
+
+.student-focused-page-main .container a {
+  display: inline-block;
+  background-color: var(--accent);
+  color: var(--text-light);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 1rem 0.5rem;
+  transition: background-color 0.3s ease;
+}
+  
 /* Testimonials */
 .testimonials {
   background: linear-gradient(to right, var(--primary), var(--primary-darker));
@@ -409,8 +427,8 @@ nav ul li li a {
 
 /* Footer */
 footer {
-  background-color: var(--primary-darker);
-  color: var(--accent);
+  background-image: linear-gradient(to right, var(--primary) 15%, var(--background) 70%);
+  color: var(--text-muted);
   text-align: center;
   padding: 1.5rem 1rem;
   font-size: 0.9rem;
