@@ -1786,18 +1786,24 @@ footer {
 }
 
 #programSearch,
-#degreeFilter {
+#degreeFilter,
+#languageFilter,
+#countryFilter,
+#typeFilter {
     padding: 1rem 1rem;
     border: 1px solid var(--border);
-    border-radius: 8px;
     font-size: 1rem;
     color: var(--text);
     background-color: var(--background-lighter);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    min-width: 150px;
 }
 
 #programSearch:focus,
-#degreeFilter:focus {
+#degreeFilter:focus,
+#languageFilter:focus,
+#countryFilter:focus,
+#typeFilter:focus {
     outline: none;
     border-color: var(--primary);
     box-shadow: 0 0 0 3px var(--accent); /* Adds a focus ring */

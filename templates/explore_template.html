@@ -20,10 +20,8 @@
                     </div>
                     <div class="filters">
                         <select id="countryFilter">
-                            <option value="">All Countries</option>
-                            {% for country in all_countries %}
-                                <option value="{{ country | lower }}">{{ country }}</option>
-                            {% endfor %}
+                            <option value="">All Countries</option>{% for country in all_countries %}
+                            <option value="{{ country | lower }}">{{ country }}</option>{% endfor %}
                         </select>
                         <select id="typeFilter">
                             <option value="">All Types</option>
@@ -32,11 +30,9 @@
                         </select>
                         <select id="degreeFilter">
                             <option value="">All Degrees</option>
-                            <option value="associate">Associate</option>
-                            <option value="bachelor">Bachelor</option>
-                            <option value="master non thesis">Master Non Thesis</option>
-                            <option value="master with thesis">Master With Thesis</option>
-                            <option value="phd">PhD</option>
+                        </select>
+                        <select id="languageFilter">
+                            <option value="">All Languages</option>
                         </select>
                     </div>
                 </section>

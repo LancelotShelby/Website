@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // === HEADER NAVIGATION LOGIC ===
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector("nav ul");
     const dropdownLinks = document.querySelectorAll(".dropdown > a");
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const countryFilter = document.getElementById('countryFilter');
     const typeFilter = document.getElementById('typeFilter');
     const degreeFilter = document.getElementById('degreeFilter');
+    const languageFilter = document.getElementById('languageFilter'); // Add this line
 
     let allUniversities = [];
     let currentSearchTerm = '';
@@ -43,8 +45,11 @@ document.addEventListener('DOMContentLoaded', () => {
             allUniversities = await response.json();
             console.log('Data fetched:', allUniversities);
 
+            populateLanguageFilter(allUniversities); // Populate language filter options
+            populateDegreeFilter(allUniversities); // Populate degree filter options
+
             // Initial render
-            displayUniversities(allUniversities, { searchTerm: '', selectedDegree: 'all', searchType: 'all' });
+            displayUniversities(allUniversities, { searchTerm: '', selectedDegree: 'all', selectedLanguage: 'all', searchType: 'all' });
         } catch (error) {
             console.error('Could not fetch universities:', error);
             if (universityListContainer) {
@@ -53,13 +58,42 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Populate language filter options dynamically
+    function populateLanguageFilter(universities) {
+        if (!languageFilter) return;
+        const languageSet = new Set();
+        universities.forEach(uni => {
+            (uni.programs || []).forEach(prog => {
+                if (prog.language) languageSet.add(prog.language);
+            });
+        });
+        const languages = Array.from(languageSet).sort();
+        languageFilter.innerHTML = `<option value="">All Languages</option>` +
+            languages.map(lang => `<option value="${lang}">${lang}</option>`).join('');
+    }
+
+    // Populate degree filter options dynamically
+    function populateDegreeFilter(universities) {
+        if (!degreeFilter) return;
+        const degreeSet = new Set();
+        universities.forEach(uni => {
+            (uni.programs || []).forEach(prog => {
+                if (prog.degree) degreeSet.add(prog.degree);
+            });
+        });
+        const degrees = Array.from(degreeSet).sort();
+        degreeFilter.innerHTML = `<option value="">All Degrees</option>` +
+            degrees.map(deg => `<option value="${deg.toLowerCase()}">${deg}</option>`).join('');
+    }
+
     // Function to display universities
     function displayUniversities(universitiesToShow, searchCriteria = {}) {
         if (!universityListContainer) return;
 
         universityListContainer.innerHTML = '';
-        const searchTerm = searchCriteria.searchTerm.toLowerCase().trim();
-        const selectedDegree = searchCriteria.selectedDegree.toLowerCase();
+        const searchTerm = (searchCriteria.searchTerm || '').toLowerCase().trim();
+        const selectedDegree = (searchCriteria.selectedDegree || '').toLowerCase();
+        const selectedLanguage = (searchCriteria.selectedLanguage || '').toLowerCase();
 
         if (universitiesToShow.length === 0) {
             universityListContainer.innerHTML = '<p class="no-results-message">No universities found matching your criteria.</p>';
@@ -71,10 +105,11 @@ document.addEventListener('DOMContentLoaded', () => {
             card.classList.add('university-card');
             
             let cardHtml = '';
-            const matchingPrograms = searchTerm ? uni.programs.filter(prog => {
+            const matchingPrograms = searchTerm ? (uni.programs || []).filter(prog => {
                 const matchesSearch = prog.name && prog.name.toLowerCase().includes(searchTerm);
-                const matchesDegree = selectedDegree === 'all' || (prog.degree && prog.degree.toLowerCase() === selectedDegree);
-                return matchesSearch && matchesDegree;
+                const matchesDegree = selectedDegree === 'all' || selectedDegree === '' || (prog.degree && prog.degree.toLowerCase() === selectedDegree);
+                const matchesLanguage = selectedLanguage === 'all' || selectedLanguage === '' || (prog.language && prog.language.toLowerCase() === selectedLanguage);
+                return matchesSearch && matchesDegree && matchesLanguage;
             }) : [];
 
             if (matchingPrograms.length > 0) {
@@ -131,6 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedCountry = countryFilter.value.toLowerCase();
         const selectedType = typeFilter.value.toLowerCase();
         const selectedDegree = degreeFilter.value.toLowerCase();
+        const selectedLanguage = languageFilter ? languageFilter.value.toLowerCase() : '';
 
         currentSearchTerm = searchTerm;
         
@@ -145,29 +181,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 uni.name.toLowerCase().includes(searchTerm) ||
                 (uni.description && uni.description.toLowerCase().includes(searchTerm));
 
-            const hasProgramMatchingBoth = programs.some(prog => {
+            const hasProgramMatchingAll = programs.some(prog => {
                 const programNameMatchesSearch = prog.name && prog.name.toLowerCase().includes(searchTerm);
                 const programMatchesDegree = selectedDegree === '' || (prog.degree && prog.degree.toLowerCase() === selectedDegree);
-                return programNameMatchesSearch && programMatchesDegree;
+                const programMatchesLanguage = selectedLanguage === '' || (prog.language && prog.language.toLowerCase() === selectedLanguage);
+                return programNameMatchesSearch && programMatchesDegree && programMatchesLanguage;
             });
 
-            if (hasProgramMatchingBoth) return true;
+            if (hasProgramMatchingAll) return true;
 
             if (uniInfoMatchesSearch) {
-                if (selectedDegree === '') return true;
-                return programs.some(prog => prog.degree && prog.degree.toLowerCase() === selectedDegree);
+                // If searching by university info, still require degree/language if selected
+                let degreeOk = selectedDegree === '' || programs.some(prog => prog.degree && prog.degree.toLowerCase() === selectedDegree);
+                let languageOk = selectedLanguage === '' || programs.some(prog => prog.language && prog.language.toLowerCase() === selectedLanguage);
+                return degreeOk && languageOk;
             }
 
             return false;
         });
 
-        displayUniversities(filteredUniversities, { searchTerm, selectedDegree });
+        displayUniversities(filteredUniversities, { searchTerm, selectedDegree, selectedLanguage });
     }
 
     if (searchInput) searchInput.addEventListener('input', filterAndRenderUniversities);
     if (countryFilter) countryFilter.addEventListener('change', filterAndRenderUniversities);
     if (typeFilter) typeFilter.addEventListener('change', filterAndRenderUniversities);
     if (degreeFilter) degreeFilter.addEventListener('change', filterAndRenderUniversities);
+    if (languageFilter) languageFilter.addEventListener('change', filterAndRenderUniversities);
 
     if (universityListContainer) fetchUniversities();
 });
