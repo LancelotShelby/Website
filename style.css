@@ -36,7 +36,8 @@ body {
   line-height: 1.6;
   color: var(--text);
   background-color: var(--background);
-  overflow-x: hidden; /* Prevent horizontal scroll on small devices */
+  overflow-x: hidden;
+  /* Prevent horizontal scroll on small devices */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -44,24 +45,24 @@ body {
 
 /* Header */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    
-    /* --- GRADIENT BACKGROUND --- */
-    /* Syntax: linear-gradient(to <direction>, <color1> <stop>, <color2> <stop>, ...) */
-    background-image: linear-gradient(to left, var(--primary) 15%, var(--background) 70%);
-    /* Fallback for browsers that don't support gradients */
-    background-color: var(--primary);
-    
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: relative;
-    
-    /* --- IMPORTANT TEXT COLOR CHANGE --- */
-    /* Since the background is now colored, the default black/dark text may be hard to read. */
-    color: white;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+
+  /* --- GRADIENT BACKGROUND --- */
+  /* Syntax: linear-gradient(to <direction>, <color1> <stop>, <color2> <stop>, ...) */
+  background-image: linear-gradient(to left, var(--primary) 15%, var(--background) 70%);
+  /* Fallback for browsers that don't support gradients */
+  background-color: var(--primary);
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+
+  /* --- IMPORTANT TEXT COLOR CHANGE --- */
+  /* Since the background is now colored, the default black/dark text may be hard to read. */
+  color: white;
+}
 
 .logo img {
   height: 80px;
@@ -96,7 +97,8 @@ nav ul li li a {
 }
 
 /* Dropdown Menu (Desktop First) */
-.dropdown-menu, .sub-menu {
+.dropdown-menu,
+.sub-menu {
   display: none;
   position: absolute;
   background-color: var(--card-bg);
@@ -104,7 +106,8 @@ nav ul li li a {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   list-style: none;
-  top: 100%; /* Position the dropdown directly below the parent */
+  top: 100%;
+  /* Position the dropdown directly below the parent */
   left: 0;
 }
 
@@ -112,6 +115,7 @@ nav ul li li a {
   position: relative;
   max-width: fit-content;
 }
+
 .dropdown:hover .dropdown-menu {
   display: block;
   background-color: var(--primary);
@@ -119,7 +123,8 @@ nav ul li li a {
 
 .sub-dropdown:hover .sub-menu {
   display: block;
-  left: 80px; /* Position to the right of the parent */
+  left: 80px;
+  /* Position to the right of the parent */
   top: 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-top: 0;
@@ -130,7 +135,8 @@ nav ul li li a {
   right: 100%;
 }
 
-.dropdown-menu a, .sub-menu a {
+.dropdown-menu a,
+.sub-menu a {
   color: var(--text);
   padding: 10px 15px;
   display: block;
@@ -138,7 +144,8 @@ nav ul li li a {
   transition: background-color 0.3s ease;
 }
 
-.dropdown-menu a:hover, .sub-menu a:hover {
+.dropdown-menu a:hover,
+.sub-menu a:hover {
   background-color: var(--accent-light);
 }
 
@@ -149,23 +156,29 @@ nav ul li li a {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(to left, var(--primary), var(--primary-darker)), url('images/hero-bg.jpg') center/cover no-repeat fixed; /* Added fixed for parallax-like effect */
-  background-size: cover; /* Ensure image covers the area */
+  background: linear-gradient(to left, var(--primary), var(--primary-darker)), url('images/hero-bg.jpg') center/cover no-repeat fixed;
+  /* Added fixed for parallax-like effect */
+  background-size: cover;
+  /* Ensure image covers the area */
   color: var(--text-light);
-  padding: 4rem 1.5rem; /* Adjusted padding for mobile */
+  padding: 4rem 1.5rem;
+  /* Adjusted padding for mobile */
   text-align: center;
 }
 
 .hero-text h1 {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  font-size: 2.5rem; /* Adjusted for mobile */
+  font-size: 2.5rem;
+  /* Adjusted for mobile */
   margin-bottom: 1rem;
-  word-break: break-word; /* Prevent long words from overflowing */
+  word-break: break-word;
+  /* Prevent long words from overflowing */
 }
 
 .hero-text p {
-  font-size: 1.1rem; /* Adjusted for mobile */
+  font-size: 1.1rem;
+  /* Adjusted for mobile */
   margin-bottom: 2rem;
   max-width: 600px;
   margin-left: auto;
@@ -175,11 +188,13 @@ nav ul li li a {
 .cta-btn {
   background-color: var(--accent);
   color: var(--text-light);
-  padding: 0.75rem 1.5rem; /* Adjusted padding */
+  padding: 0.75rem 1.5rem;
+  /* Adjusted padding */
   border-radius: 30px;
   font-weight: 600;
   text-decoration: none;
-  font-size: 1rem; /* Adjusted for mobile */
+  font-size: 1rem;
+  /* Adjusted for mobile */
   transition: background-color 0.3s ease;
   margin: 0 0.5rem;
   text-align: center;
@@ -194,106 +209,125 @@ nav ul li li a {
 /* ========================================================== */
 
 .country-showcase {
-    background: linear-gradient(to left, var(--primary), var(--primary-darker));
-    padding: 3rem 2rem;
-    text-align: center;
+  background: linear-gradient(to left, var(--primary), var(--primary-darker));
+  padding: 3rem 2rem;
+  text-align: center;
 }
 
 .country-showcase h2 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 2.5rem;
-    color: var(--text-light);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: var(--text-light);
 }
 
 .country-grid {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 /* Base style for all country card links */
 .country-showcase a {
-    text-decoration: none;
-    color: inherit;
-    width: 100%;
-    max-width: 300px;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  max-width: 300px;
 }
 
 /* Base style for the card div itself */
 .country-card {
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    transition: all 0.5s ease; /* Smooth transition for all changes */
-    overflow: hidden; /* Ensure the background image doesn't overflow */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: all 0.5s ease;
+  /* Smooth transition for all changes */
+  overflow: hidden;
+  /* Ensure the background image doesn't overflow */
 
-    /* Default (Non-Flag) Backgrounds */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    /* Center text content */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 200px; /* Give the card a fixed height */
-    position: relative; /* For overlay positioning */
-    z-index: 0;
+  /* Default (Non-Flag) Backgrounds */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Center text content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  /* Give the card a fixed height */
+  position: relative;
+  /* For overlay positioning */
+  z-index: 0;
 }
+
 /* Base style for the transition layer (flag will live here) */
 .country-card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0; /* Start fully transparent (hidden) */
-    transition: opacity 0.5s ease; /* The smooth fade-in transition */
-    z-index: 1; /* Below the text content */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  /* Start fully transparent (hidden) */
+  transition: opacity 0.5s ease;
+  /* The smooth fade-in transition */
+  z-index: 1;
+  /* Below the text content */
 }
 
 /* Text styles (ensure they are legible) */
 .country-card h3 {
-    font-size: 1.8rem;
-    color: var(--primary); /* Default text color */
-    position: relative; /* CRITICAL: Must be relative/absolute with a higher z-index */
-    z-index: 3; /* Always on top of the flag layer (z-index: 1) and overlay (z-index: 2) */
-  }
+  font-size: 1.8rem;
+  color: var(--primary);
+  /* Default text color */
+  position: relative;
+  /* CRITICAL: Must be relative/absolute with a higher z-index */
+  z-index: 3;
+  /* Always on top of the flag layer (z-index: 1) and overlay (z-index: 2) */
+}
 
 .country-card p {
-    color: var(--text); /* Default text color */
-    position: relative; /* CRITICAL: Must be relative/absolute with a higher z-index */
-    z-index: 3; /* Always on top of the flag layer (z-index: 1) and overlay (z-index: 2) */
-  }
+  color: var(--text);
+  /* Default text color */
+  position: relative;
+  /* CRITICAL: Must be relative/absolute with a higher z-index */
+  z-index: 3;
+  /* Always on top of the flag layer (z-index: 1) and overlay (z-index: 2) */
+}
 
 /* --- HOVER EFFECT FOR EACH COUNTRY --- */
 
 /* --- Turkey Flag Hover --- */
 .country-card-turkey:hover .country-card::after {
-    background-image: url('images/flags/turkey-flag.png'); 
-    opacity: 1; /* Fade in the flag */
+  background-image: url('images/flags/turkey-flag.png');
+  opacity: 1;
+  /* Fade in the flag */
 }
+
 .country-card-turkey:hover .country-card h3,
 .country-card-turkey:hover .country-card p {
-    color: black; /* Text color change snaps instantly or uses the base transition */
+  color: black;
+  /* Text color change snaps instantly or uses the base transition */
 }
 
 /* --- Malaysia Flag Hover --- */
 .country-card-malaysia:hover .country-card::after {
-    background-image: url('images/flags/malaysia-flag.png'); 
-    opacity: 1; /* Fade in the flag */
+  background-image: url('images/flags/malaysia-flag.png');
+  opacity: 1;
+  /* Fade in the flag */
 }
+
 .country-card-malaysia:hover .country-card h3,
 .country-card-malaysia:hover .country-card p {
-    color: black; 
+  color: black;
 }
 
 /* Why Choose Us */
@@ -358,6 +392,7 @@ nav ul li li a {
   text-align: center;
   color: var(--text-light);
 }
+
 .student-focused-page-main .info-section-1,
 .student-focused-page-main .info-section-2 {
   padding: 2rem 0;
@@ -366,12 +401,12 @@ nav ul li li a {
   height: max-content;
 }
 
-.student-focused-page-main .info-section-1{
-    background: linear-gradient(to left, var(--primary), var(--primary-dark));
+.student-focused-page-main .info-section-1 {
+  background: linear-gradient(to left, var(--primary), var(--primary-dark));
 }
 
-.student-focused-page-main .info-section-2{
-    background: linear-gradient(to right, var(--primary), var(--primary-dark));
+.student-focused-page-main .info-section-2 {
+  background: linear-gradient(to right, var(--primary), var(--primary-dark));
 }
 
 .student-focused-page-main .container a {
@@ -385,7 +420,7 @@ nav ul li li a {
   margin: 1rem 0.5rem;
   transition: background-color 0.3s ease;
 }
-  
+
 /* Testimonials */
 .testimonials {
   background: linear-gradient(to right, var(--primary), var(--primary-darker));
@@ -565,10 +600,12 @@ footer {
 .university-section {
   text-align: center;
 }
+
 .university-section h1 {
   font-size: 2.5rem;
   margin-bottom: 0px;
 }
+
 .university-grid {
   display: flex;
   justify-content: flex;
@@ -618,7 +655,7 @@ footer {
 .info-section p {
   color: var(--text);
   font-size: 1.1rem;
-  line-height: 1.7;  
+  line-height: 1.7;
 }
 
 .action-buttons {
@@ -653,9 +690,12 @@ footer {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
   color: inherit;
-  display: flex; /* Makes the card a flex container */
-  flex-direction: column; /* Stacks children vertically */
-  align-items: center; /* Centers children horizontally */
+  display: flex;
+  /* Makes the card a flex container */
+  flex-direction: column;
+  /* Stacks children vertically */
+  align-items: center;
+  /* Centers children horizontally */
   padding: 1.5rem;
 }
 
@@ -677,13 +717,16 @@ footer {
 .university-logo-container img {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain; /* Ensures the image fits without distortion */
-  border-radius: 8px; /* Optional: adds a slight border-radius for aesthetics */
+  object-fit: contain;
+  /* Ensures the image fits without distortion */
+  border-radius: 8px;
+  /* Optional: adds a slight border-radius for aesthetics */
 }
 
 /* Updated styling for the university info section */
 .university-info {
-  text-align: center; /* Centers the text */
+  text-align: center;
+  /* Centers the text */
   width: 235px;
   max-height: 250px;
   margin-top: 1rem;
@@ -734,6 +777,7 @@ footer {
 .back-link:hover {
   color: var(--accent);
 }
+
 /* === Karabük University Page Styling === */
 .university-page {
   background-color: var(--background-lighter);
@@ -955,7 +999,9 @@ footer {
   background-color: var(--accent-dark);
 }
 
-.loading-message, .no-results-message, .error-message {
+.loading-message,
+.no-results-message,
+.error-message {
   text-align: center;
   font-size: 1.2rem;
   color: var(--text);
@@ -1103,8 +1149,15 @@ footer {
 }
 
 @keyframes animatetop {
-  from { top: -300px; opacity: 0; }
-  to { top: 0; opacity: 1; }
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
 
 .close-button {
@@ -1735,54 +1788,60 @@ footer {
 /* --- University Programs Card Layout --- */
 
 .programs-grid {
-    display: grid;
-    /* Creates a responsive grid with columns that are a minimum of 300px wide. */
-    /* They'll grow and shrink to fit the available space, creating multiple columns on larger screens. */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem; /* Spacing between the cards */
-    margin-top: 2rem;
+  display: grid;
+  /* Creates a responsive grid with columns that are a minimum of 300px wide. */
+  /* They'll grow and shrink to fit the available space, creating multiple columns on larger screens. */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  /* Spacing between the cards */
+  margin-top: 2rem;
 }
 
 .program-card-link {
-    text-decoration: none; /* Removes the underline from the link */
-    color: inherit; /* Inherits the text color from its parent */
+  text-decoration: none;
+  /* Removes the underline from the link */
+  color: inherit;
+  /* Inherits the text color from its parent */
 }
 
 .program-card {
-    background-color: var(--card-bg); /* Use your defined color variable */
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    height: 100%;
+  background-color: var(--card-bg);
+  /* Use your defined color variable */
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
 }
 
 .program-card:hover {
-    transform: translateY(-5px); /* Lifts the card on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  /* Lifts the card on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .program-card h3 {
-    font-size: 1.5rem;
-    margin-top: 0;
-    color: var(--heading);
+  font-size: 1.5rem;
+  margin-top: 0;
+  color: var(--heading);
 }
 
 .program-card p {
-    margin: 0.5rem 0;
-    color: var(--text-muted);
+  margin: 0.5rem 0;
+  color: var(--text-muted);
 }
 
 /* --- University Programs Search & Filter --- */
 
 .search-and-filters-container {
-    display: flex;
-    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
-    gap: 1rem;
-    margin: 2rem 0;
-    align-items: center;
-    justify-self: center;
+  display: flex;
+  flex-wrap: wrap;
+  /* Allows items to wrap on smaller screens */
+  gap: 1rem;
+  margin: 2rem 0;
+  align-items: center;
+  justify-self: center;
 }
 
 #programSearch,
@@ -1790,13 +1849,13 @@ footer {
 #languageFilter,
 #countryFilter,
 #typeFilter {
-    padding: 1rem 1rem;
-    border: 1px solid var(--border);
-    font-size: 1rem;
-    color: var(--text);
-    background-color: var(--background-lighter);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    min-width: 150px;
+  padding: 1rem 1rem;
+  border: 1px solid var(--border);
+  font-size: 1rem;
+  color: var(--text);
+  background-color: var(--background-lighter);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  min-width: 150px;
 }
 
 #programSearch:focus,
@@ -1804,9 +1863,10 @@ footer {
 #languageFilter:focus,
 #countryFilter:focus,
 #typeFilter:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px var(--accent); /* Adds a focus ring */
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--accent);
+  /* Adds a focus ring */
 }
 
 .hamburger {
@@ -1836,18 +1896,22 @@ nav ul.active {
   header {
     padding: 1rem 1.5rem;
   }
+
   nav ul {
     gap: 1.5rem;
   }
+
   .hero-text h1 {
     font-size: 2.5rem;
   }
+
   .hero-text p {
     font-size: 1.1rem;
   }
 }
 
 @media (max-width: 768px) {
+
   /* Navigation adjustments */
   nav ul {
     display: none;
@@ -1859,9 +1923,11 @@ nav ul.active {
     width: 100%;
     padding: 1rem;
   }
+
   nav ul.active {
     display: flex;
   }
+
   .hamburger {
     display: block;
     font-size: 1.8rem;
@@ -1871,9 +1937,11 @@ nav ul.active {
   .hero {
     padding: 3rem 1rem;
   }
+
   .hero-text h1 {
     font-size: 2rem;
   }
+
   .hero-text p {
     font-size: 1rem;
   }
@@ -1886,76 +1954,85 @@ nav ul.active {
     align-items: center;
     gap: 1.5rem;
   }
+
   .university-grid-explore {
     grid-template-columns: 1fr;
   }
+
   /* Apply Flag Permanently */
-  
+
   /* Turkey Mobile Flag */
   .country-card-turkey .country-card {
-      background-image: url('images/flags/turkey-flag.png');
-      background-size: cover;
-      background-position: center;
-      color: white; /* Ensure text is visible over the flag */
-      position: relative;
+    background-image: url('images/flags/turkey-flag.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    /* Ensure text is visible over the flag */
+    position: relative;
   }
 
   /* Malaysia Mobile Flag */
   .country-card-malaysia .country-card {
-      background-image: url('images/flags/malaysia-flag.png');
-      background-size: cover;
-      background-position: center;
-      color: black; /* Use black text for Malaysia flag contrast */
-      position: relative;
+    background-image: url('images/flags/malaysia-flag.png');
+    background-size: cover;
+    background-position: center;
+    color: black;
+    /* Use black text for Malaysia flag contrast */
+    position: relative;
   }
-  
+
   /* Apply Overlay on Mobile */
   .country-card-turkey .country-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(0, 0, 0, 0.3); /* Darker overlay for Turkey */
-      z-index: 1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    /* Darker overlay for Turkey */
+    z-index: 1;
   }
-  
+
   .country-card-malaysia .country-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(255, 255, 255, 0.4); /* Lighter overlay for Malaysia */
-      z-index: 1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+    /* Lighter overlay for Malaysia */
+    z-index: 1;
   }
 
   /* Ensure text is above the mobile overlay */
-  .country-card h3, .country-card p {
-      z-index: 2; 
+  .country-card h3,
+  .country-card p {
+    z-index: 2;
   }
 
   /* Force mobile text colors */
   .country-card-turkey .country-card h3,
   .country-card-turkey .country-card p {
-      color: white;
+    color: white;
   }
 
   .country-card-malaysia .country-card h3,
   .country-card-malaysia .country-card p {
-      color: black;
+    color: black;
   }
 
   /* You may also want to disable the desktop hover style on mobile */
-  .country-card-turkey:hover .country-card, 
+  .country-card-turkey:hover .country-card,
   .country-card-malaysia:hover .country-card {
-      transform: none; /* Prevents the translateY effect on touch */
+    transform: none;
+    /* Prevents the translateY effect on touch */
   }
 }
 
 @media (max-width: 600px) {
+
   .country-showcase .country-grid,
   .features,
   .testimonial-cards,
@@ -1964,10 +2041,12 @@ nav ul.active {
     align-items: center;
     gap: 1.5rem;
   }
+
   .university-grid,
   .university-grid-explore {
     grid-template-columns: 1fr;
   }
+
   .contact-form input,
   .contact-form textarea,
   .contact-form button {
@@ -1979,20 +2058,25 @@ nav ul.active {
   .hero-text h1 {
     font-size: 1.8rem;
   }
+
   .hero-text p {
     font-size: 0.95rem;
   }
+
   .cta-btn {
     display: block;
     margin: 0.5rem auto;
   }
+
   .filter-controls {
     flex-direction: column;
     gap: 10px;
   }
+
   .program-details-explore.active {
     max-height: 500px;
   }
+
   .modal-content {
     width: 95%;
     margin: 20% auto;
