@@ -607,13 +607,9 @@ footer {
 }
 
 .university-grid {
-  display: flex;
-  justify-content: flex;
-  gap: 37px;
-  flex-wrap: wrap;
-  background-color: var(--background-light);
-  padding: 2rem 0;
-  border-radius: 12px;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .requirements-box {
@@ -914,7 +910,7 @@ footer {
 /* University Grid for Explore Page */
 .university-grid-explore {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
   padding: 20px 0;
 }
@@ -1912,88 +1908,732 @@ nav ul.active {
 
 @media (max-width: 768px) {
 
+  /* Header adjustments */
+  header {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    /* Ensure proper positioning context */
+  }
+
+  .logo img {
+    height: 60px;
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Hamburger Menu Button */
+  .hamburger {
+    display: block !important;
+    /* Force visibility */
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: white;
+    /* Adjust color if needed to contrast with header */
+    z-index: 1001;
+    /* Ensure it's above other elements */
+    padding: 0.5rem;
+    position: absolute;
+    /* Position it where you want it */
+    top: 1rem;
+    /* Adjust as needed */
+    right: 1rem;
+    /* Adjust as needed */
+    background: none;
+    /* Ensure no background interferes */
+    border: none;
+  }
+
   /* Navigation adjustments */
   nav ul {
     display: none;
+    /* Hidden by default */
     flex-direction: column;
     background-color: var(--primary);
     position: absolute;
     top: 100%;
+    /* Position directly below header */
     right: 0;
-    width: 100%;
+    width: 100vw;
+    /* Full width for easier clicking */
     padding: 1rem;
+    z-index: 1000;
+    /* Ensure it's above other content */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
 
   nav ul.active {
     display: flex;
+    /* Show when 'active' class is added via JS */
   }
 
-  .hamburger {
+  nav ul li {
+    margin: 0.5rem 0;
+  }
+
+  nav ul li a {
+    color: var(--text-light);
+    /* Ensure text is visible on the primary background */
     display: block;
-    font-size: 1.8rem;
-    cursor: pointer;
+    padding: 1rem;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    /* Reduced font size for mobile nav */
   }
 
+  nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Light hover effect */
+  }
+
+  /* Hero section */
   .hero {
-    padding: 3rem 1rem;
+    padding: 2rem 1rem;
+    text-align: center;
   }
 
   .hero-text h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    /* Reduced from 2.5rem */
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
   }
 
   .hero-text p {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    /* Reduced from 1.1rem */
+    margin-bottom: 1.5rem;
   }
 
-  .features,
-  .testimonial-cards,
-  .contact-container,
-  .options-container {
+  .cta-btn {
+    display: inline-block;
+    margin: 0.5rem 0;
+    min-width: 200px;
+    text-align: center;
+    font-size: 0.9rem;
+    /* Reduced font size */
+  }
+
+  /* Country showcase */
+  .country-showcase {
+    padding: 2rem 1rem;
+  }
+
+  .country-showcase h2 {
+    font-size: 1.8rem;
+    /* Reduced from 2.5rem */
+  }
+
+  .country-grid {
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
   }
 
-  .university-grid-explore {
-    grid-template-columns: 1fr;
+  .country-showcase a {
+    min-width: fit-content;
   }
 
-  /* Apply Flag Permanently */
+  .country-card {
+    max-width: 100%;
+    width: 100%;
+    padding: 1.2rem;
+    /* Slightly reduced padding */
+    min-height: 220px;
+    /* Adjusted height */
+  }
 
-  /* Turkey Mobile Flag */
+  .country-card h3 {
+    font-size: 1.4rem;
+    /* Reduced from 1.8rem */
+  }
+
+  .country-card p {
+    font-size: 0.9rem;
+    /* Reduced font size */
+  }
+
+  /* Features section */
+  .why-choose {
+    padding: 2.5rem 1rem;
+    /* Slightly reduced padding */
+  }
+
+  .why-choose h2 {
+    font-size: 1.8rem;
+    /* Reduced from 2.5rem */
+  }
+
+  .features {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .feature {
+    width: 100%;
+    max-width: 320px;
+    /* Slightly reduced max-width */
+    padding: 1.5rem;
+    /* Reduced padding */
+    text-align: center;
+  }
+
+  .feature h3 {
+    font-size: 1.3rem;
+    /* Reduced font size */
+  }
+
+  .feature p {
+    font-size: 0.9rem;
+    /* Reduced from 1rem */
+  }
+
+  /* Testimonials */
+  .testimonials {
+    padding: 2.5rem 1rem;
+    /* Slightly reduced padding */
+  }
+
+  .testimonials h2 {
+    font-size: 1.8rem;
+    /* Reduced from 2.5rem */
+  }
+
+  .testimonial-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .testimonial {
+    width: 100%;
+    max-width: 320px;
+    /* Slightly reduced max-width */
+    padding: 1.5rem;
+    /* Reduced padding */
+    font-style: italic;
+  }
+
+  .testimonial p {
+    font-size: 0.95rem;
+    /* Reduced font size */
+  }
+
+  .testimonial h4 {
+    font-size: 1rem;
+    /* Reduced font size */
+    margin-top: 1rem;
+    /* Adjusted margin */
+  }
+
+  /* Contact section */
+  .contact {
+    padding: 30px 15px;
+    /* Reduced padding */
+  }
+
+  .contact h2 {
+    font-size: 1.6rem;
+    /* Reduced from 28px */
+  }
+
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    /* Slightly reduced gap */
+  }
+
+  .contact-info {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .contact-info p {
+    font-size: 0.9rem;
+    /* Reduced font size */
+  }
+
+  .contact-form {
+    max-width: 100%;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    font-size: 1rem;
+    /* Prevent iOS zoom, reduced from 16px */
+    padding: 10px;
+    /* Slightly reduced padding */
+  }
+
+  .contact-form button {
+    font-size: 1rem;
+    /* Reduced font size */
+    padding: 10px;
+    /* Slightly reduced padding */
+  }
+
+  .contact-options {
+    padding: 40px 15px;
+  }
+
+  .contact-options h2 {
+    font-size: 1.6rem;
+    /* Reduced from 28px */
+  }
+
+  .options-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .contact-option {
+    min-width: 100%;
+    max-width: 280px;
+    /* Slightly reduced max-width */
+    padding: 20px 25px;
+    /* Reduced padding */
+    font-size: 1rem;
+    /* Reduced from 18px */
+  }
+
+  .contact-option i {
+    font-size: 1.5rem;
+    /* Reduced from 32px */
+  }
+
+  /* University section */
+  .university-section h1 {
+    font-size: 1.8rem;
+    /* Reduced from 2.5rem */
+  }
+
+  .university-grid {
+    display: grid;
+    gap: 15px;
+    /* Reduced gap */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .requirements-box {
+    padding: 1rem;
+    /* Reduced padding */
+  }
+
+  .requirements-box h2 {
+    font-size: 1.4rem;
+    /* Reduced from 1.8rem */
+  }
+
+  .requirements-box h3 {
+    font-size: 2rem;
+    /* Reduced from 3rem */
+  }
+
+  .requirements-box li {
+    font-size: 1rem;
+    /* Reduced from 1.1rem */
+  }
+
+  .info-section h2 {
+    font-size: 1.6rem;
+    /* Reduced from 2rem */
+  }
+
+  .info-section p {
+    font-size: 1rem;
+    /* Reduced from 1.1rem */
+  }
+
+  .action-buttons a {
+    font-size: 0.9rem;
+    /* Reduced font size */
+    padding: 0.6rem 1.2rem;
+    /* Slightly reduced padding */
+  }
+
+  /* University cards */
+  .university-card {
+    /* Keep these styles as they were, but ensure no fixed width is set */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    width: 100%;
+    /* Important: ensures card fills the grid column */
+  }
+
+  .university-logo-container {
+    width: 80px;
+    /* Reduced size */
+    height: 80px;
+    /* Reduced size */
+    margin-bottom: 0.8rem;
+    /* Adjusted margin */
+  }
+
+  .university-logo-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 6px;
+    /* Adjusted border-radius */
+  }
+
+  .university-info {
+    width: 100%;
+    /* Full width */
+    max-height: none;
+    /* Remove max-height constraint */
+    margin-top: 0.8rem;
+    /* Adjusted margin */
+  }
+
+  .university-info h3 {
+    font-size: 1.3rem;
+    /* Reduced from 1.5rem */
+  }
+
+  .university-info p {
+    font-size: 0.85rem;
+    /* Reduced from 0.9rem */
+  }
+
+  .university-info .view-details-btn {
+    font-size: 0.85rem;
+    /* Reduced font size */
+    padding: 0.6rem 1.2rem;
+    /* Slightly reduced padding */
+  }
+
+  /* Explore page adjustments */
+  .explore-page h1 {
+    font-size: 1.8rem;
+    /* Reduced from 2.8rem */
+  }
+
+  .filter-controls {
+    flex-direction: column;
+    gap: 12px;
+    /* Reduced gap */
+    padding: 12px;
+    /* Reduced padding */
+    align-items: stretch;
+    /* Stretch items to full width */
+  }
+
+  .filter-group {
+    min-width: 100%;
+  }
+
+  .filter-group label {
+    font-size: 0.9rem;
+    /* Reduced font size */
+  }
+
+  #universityList,
+  .filter-group select {
+    font-size: 0.9rem;
+    /* Reduced font size */
+    padding: 8px 12px;
+    /* Reduced padding */
+  }
+
+  #searchUniversities {
+    min-width: 100%;
+    font-size: 0.9rem;
+    /* Reduced font size */
+    padding: 8px 12px;
+    /* Reduced padding */
+  }
+
+  .university-grid-explore {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Single column */
+    gap: 1.5rem;
+    /* Reduced gap */
+  }
+
+  .university-card-explore {
+    max-width: 100%;
+  }
+
+  .university-card-explore h3 {
+    font-size: 1.3rem;
+    /* Reduced from 1.6rem */
+  }
+
+  .university-card-explore .uni-info {
+    font-size: 0.85rem;
+    /* Reduced font size */
+  }
+
+  .university-card-explore .uni-description {
+    font-size: 0.85rem;
+    /* Reduced font size */
+  }
+
+  .university-card-explore .read-more-btn {
+    font-size: 0.8rem;
+    /* Reduced font size */
+    padding: 6px 12px;
+    /* Reduced padding */
+  }
+
+  /* Program list items in explore cards */
+  .program-title-explore {
+    font-size: 0.9rem;
+    /* Reduced font size */
+    padding: 10px 15px;
+    /* Reduced padding */
+  }
+
+  .program-details-explore p,
+  .program-details-explore li {
+    font-size: 0.8rem;
+    /* Reduced font size */
+  }
+
+  /* Explore Page Specific Styles */
+  .filters-search {
+    padding: 1.5rem;
+    /* Reduced padding */
+    margin-bottom: 1.5rem;
+    /* Reduced margin */
+  }
+
+  .filters-search h2 {
+    font-size: 1.6rem;
+    /* Reduced from 2.2rem */
+  }
+
+  #searchInput {
+    font-size: 0.9rem;
+    /* Reduced font size */
+    padding: 0.6rem 0.8rem;
+    /* Reduced padding */
+  }
+
+  #searchButton {
+    font-size: 0.9rem;
+    /* Reduced font size */
+    padding: 0.6rem 1.2rem;
+    /* Reduced padding */
+  }
+
+  .filters select {
+    font-size: 0.9rem;
+    /* Reduced font size */
+    padding: 0.6rem 0.8rem;
+    /* Reduced padding */
+  }
+
+  .university-card h3 {
+    font-size: 1.3rem;
+    /* Reduced from 1.5rem */
+  }
+
+  .university-card p {
+    font-size: 0.9rem;
+    /* Reduced from 1rem */
+  }
+
+  /* --- University Full Detail Page Styles --- */
+  .university-full-detail-page-main {
+    padding: 1.5rem;
+    /* Reduced padding */
+  }
+
+  .uni-header h1 {
+    font-size: 2rem;
+    /* Reduced from 2.8rem */
+  }
+
+  .uni-country,
+  .uni-type {
+    font-size: 1rem;
+    /* Reduced font size */
+  }
+
+  .uni-description-full {
+    font-size: 0.95rem;
+    /* Reduced font size */
+  }
+
+  .programs-section h2 {
+    font-size: 1.6rem;
+    /* Reduced from 2.2rem */
+  }
+
+  .program-title-full-page {
+    font-size: 1.2rem;
+    /* Reduced font size */
+    padding: 1rem 1.5rem;
+    /* Reduced padding */
+  }
+
+  .program-details-full-page p,
+  .program-details-full-page li {
+    font-size: 0.9rem;
+    /* Reduced font size */
+  }
+
+  .view-program-details-btn {
+    font-size: 0.85rem;
+    /* Reduced font size */
+    padding: 0.6rem 1.2rem;
+    /* Reduced padding */
+  }
+
+  /* Program Detail Page Main Section */
+  .program-detail-page-main {
+    padding: 1.5rem;
+    /* Reduced padding */
+  }
+
+  .program-detail-header h1 {
+    font-size: 2rem;
+    /* Reduced from 3rem */
+  }
+
+  .program-sub-title {
+    font-size: 1rem;
+    /* Reduced font size */
+  }
+
+  .program-degree-type {
+    font-size: 0.9rem;
+    /* Reduced font size */
+  }
+
+  /* Program Details Section */
+  .program-full-details {
+    padding: 1.5rem;
+    /* Reduced padding */
+  }
+
+  .detail-item h3 {
+    font-size: 1.4rem;
+    /* Reduced from 1.8rem */
+  }
+
+  .detail-item p {
+    font-size: 0.95rem;
+    /* Reduced font size */
+  }
+
+  .detail-item li {
+    font-size: 0.9rem;
+    /* Reduced font size */
+    padding: 0.8rem 1rem;
+    /* Reduced padding */
+  }
+
+  /* Country List Page Main Section */
+  .country-list-page-main h1 {
+    font-size: 2rem;
+    /* Reduced from 3rem */
+  }
+
+  .country-list-page-main p {
+    font-size: 1rem;
+    /* Reduced font size */
+  }
+
+  .university-info h3 {
+    font-size: 1.3rem;
+    /* Reduced from 1.5rem */
+  }
+
+  .university-info p {
+    font-size: 0.85rem;
+    /* Reduced from 0.9rem */
+  }
+
+  .university-info .view-details-btn {
+    font-size: 0.85rem;
+    /* Reduced font size */
+    padding: 0.6rem 1.2rem;
+    /* Reduced padding */
+  }
+
+  /* --- University Programs Card Layout --- */
+  .program-card h3 {
+    font-size: 1.3rem;
+    /* Reduced font size */
+  }
+
+  .program-card p {
+    font-size: 0.9rem;
+    /* Reduced font size */
+  }
+
+  /* --- University Programs Search & Filter --- */
+  #programSearch,
+  #degreeFilter,
+  #languageFilter,
+  #countryFilter,
+  #typeFilter {
+    font-size: 0.9rem;
+    /* Reduced font size */
+    padding: 0.8rem 0.8rem;
+    /* Reduced padding */
+  }
+
+  /* Touch-friendly elements */
+  .button,
+  .cta-btn,
+  .view-details-btn,
+  .view-program-details-btn,
+  .read-more-btn,
+  .view-full-program-details {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 10px 15px;
+    /* Slightly reduced padding */
+    font-size: 0.9rem;
+    /* Reduced font size */
+  }
+
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Scroll snap for better mobile navigation */
+  .section {
+    scroll-snap-align: start;
+  }
+
+  html {
+    scroll-snap-type: y mandatory;
+  }
+
+  /* Mobile-specific flag display */
+  .country-card-turkey .country-card,
+  .country-card-malaysia .country-card {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
   .country-card-turkey .country-card {
     background-image: url('images/flags/turkey-flag.png');
-    background-size: cover;
-    background-position: center;
     color: white;
-    /* Ensure text is visible over the flag */
-    position: relative;
   }
 
-  /* Malaysia Mobile Flag */
   .country-card-malaysia .country-card {
     background-image: url('images/flags/malaysia-flag.png');
-    background-size: cover;
-    background-position: center;
     color: black;
-    /* Use black text for Malaysia flag contrast */
-    position: relative;
   }
 
-  /* Apply Overlay on Mobile */
-  .country-card-turkey .country-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3);
-    /* Darker overlay for Turkey */
-    z-index: 1;
-  }
-
+  .country-card-turkey .country-card::before,
   .country-card-malaysia .country-card::before {
     content: '';
     position: absolute;
@@ -2001,18 +2641,19 @@ nav ul.active {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.4);
-    /* Lighter overlay for Malaysia */
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: 1;
   }
 
-  /* Ensure text is above the mobile overlay */
+  .country-card-malaysia .country-card::before {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+
   .country-card h3,
   .country-card p {
     z-index: 2;
   }
 
-  /* Force mobile text colors */
   .country-card-turkey .country-card h3,
   .country-card-turkey .country-card p {
     color: white;
@@ -2023,63 +2664,8 @@ nav ul.active {
     color: black;
   }
 
-  /* You may also want to disable the desktop hover style on mobile */
   .country-card-turkey:hover .country-card,
   .country-card-malaysia:hover .country-card {
     transform: none;
-    /* Prevents the translateY effect on touch */
-  }
-}
-
-@media (max-width: 600px) {
-
-  .country-showcase .country-grid,
-  .features,
-  .testimonial-cards,
-  .options-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
-
-  .university-grid,
-  .university-grid-explore {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-form input,
-  .contact-form textarea,
-  .contact-form button {
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-text h1 {
-    font-size: 1.8rem;
-  }
-
-  .hero-text p {
-    font-size: 0.95rem;
-  }
-
-  .cta-btn {
-    display: block;
-    margin: 0.5rem auto;
-  }
-
-  .filter-controls {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .program-details-explore.active {
-    max-height: 500px;
-  }
-
-  .modal-content {
-    width: 95%;
-    margin: 20% auto;
-    padding: 20px;
   }
 }

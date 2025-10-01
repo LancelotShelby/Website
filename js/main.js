@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-    
+
     // === UNIVERSITY FILTERING LOGIC ===
     const universityListContainer = document.getElementById('universityList');
     const searchInput = document.getElementById('searchInput');
@@ -64,7 +64,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const languageSet = new Set();
         universities.forEach(uni => {
             (uni.programs || []).forEach(prog => {
-                if (prog.language) languageSet.add(prog.language);
+                if (prog.language) {
+                    // Extract words (e.g., "Arabic" from "30% Arabic")
+                    prog.language.split(/[^A-Za-z]+/).forEach(word => {
+                        if (word.length > 1) languageSet.add(word.charAt(0).toUpperCase() + word.slice(1).toLowerCase());
+                    });
+                }
             });
         });
         const languages = Array.from(languageSet).sort();
@@ -103,17 +108,19 @@ document.addEventListener('DOMContentLoaded', () => {
         universitiesToShow.forEach(uni => {
             const card = document.createElement('div');
             card.classList.add('university-card');
-            
+
             let cardHtml = '';
             const matchingPrograms = searchTerm ? (uni.programs || []).filter(prog => {
                 const matchesSearch = prog.name && prog.name.toLowerCase().includes(searchTerm);
                 const matchesDegree = selectedDegree === 'all' || selectedDegree === '' || (prog.degree && prog.degree.toLowerCase() === selectedDegree);
-                const matchesLanguage = selectedLanguage === 'all' || selectedLanguage === '' || (prog.language && prog.language.toLowerCase() === selectedLanguage);
+                // Use substring match for language
+                const matchesLanguage = selectedLanguage === 'all' || selectedLanguage === '' ||
+                    (prog.language && prog.language.toLowerCase().includes(selectedLanguage));
                 return matchesSearch && matchesDegree && matchesLanguage;
             }) : [];
 
             if (matchingPrograms.length > 0) {
-                const programsListHtml = matchingPrograms.map(prog => 
+                const programsListHtml = matchingPrograms.map(prog =>
                     `<li class="program-item">${prog.name} (${prog.degree}) (${prog.language || 'N/A'}) (${prog.tuition || 'N/A'})</li>`
                 ).join('');
 
@@ -169,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedLanguage = languageFilter ? languageFilter.value.toLowerCase() : '';
 
         currentSearchTerm = searchTerm;
-        
+
         const filteredUniversities = allUniversities.filter(uni => {
             const programs = uni.programs || [];
             const matchesCountry = selectedCountry === '' || (uni.country && uni.country.toLowerCase() === selectedCountry);
@@ -184,7 +191,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const hasProgramMatchingAll = programs.some(prog => {
                 const programNameMatchesSearch = prog.name && prog.name.toLowerCase().includes(searchTerm);
                 const programMatchesDegree = selectedDegree === '' || (prog.degree && prog.degree.toLowerCase() === selectedDegree);
-                const programMatchesLanguage = selectedLanguage === '' || (prog.language && prog.language.toLowerCase() === selectedLanguage);
+                // Match if selected language is a substring (case-insensitive)
+                const programMatchesLanguage = selectedLanguage === '' ||
+                    (prog.language && prog.language.toLowerCase().includes(selectedLanguage));
                 return programNameMatchesSearch && programMatchesDegree && programMatchesLanguage;
             });
 
@@ -193,7 +202,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (uniInfoMatchesSearch) {
                 // If searching by university info, still require degree/language if selected
                 let degreeOk = selectedDegree === '' || programs.some(prog => prog.degree && prog.degree.toLowerCase() === selectedDegree);
-                let languageOk = selectedLanguage === '' || programs.some(prog => prog.language && prog.language.toLowerCase() === selectedLanguage);
+                let languageOk = selectedLanguage === '' ||
+                    programs.some(prog => prog.language && prog.language.toLowerCase().includes(selectedLanguage));
                 return degreeOk && languageOk;
             }
 
