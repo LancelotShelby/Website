@@ -421,43 +421,187 @@ nav ul li li a {
   transition: background-color 0.3s ease;
 }
 
-/* Testimonials */
+/* --- SCROLLING CONTAINERS & ANIMATION --- */
+
 .testimonials {
-  background: linear-gradient(to right, var(--primary), var(--primary-darker));
-  color: var(--text-light);
-  padding: 4rem 2rem;
+  padding: 4rem 0;
+  /* Adjust padding for visual flow */
   text-align: center;
 }
 
-.testimonials h2 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
+.scrolling-container {
+  width: 100%;
+  overflow: hidden;
+  /* Crucial: Hides the part of the track that hasn't scrolled yet */
+  padding: 3rem 0;
+  margin: 0 auto;
 }
 
-.testimonial-cards {
+.scrolling-track {
   display: flex;
+  white-space: nowrap;
+  /* Keeps all items in a single line */
+  width: max-content;
+
+  /* Animation: 40s duration, continuous, infinite loop */
+  animation: scroll-left 40s linear infinite;
+}
+
+/* Pause the animation on hover or when JavaScript pauses it */
+.scrolling-container:hover .scrolling-track,
+.scrolling-track.paused {
+  animation-play-state: paused;
+}
+
+/* Keyframes for the infinite horizontal scroll */
+@keyframes scroll-left {
+  from {
+    /* Starts at the beginning of Set 1 */
+    transform: translateX(0);
+  }
+
+  to {
+    /* Ends at the beginning of Set 2 (halfway point) */
+    transform: translateX(-50%);
+  }
+}
+
+/* --- ENVELOPE BASE STYLE --- */
+
+.envelope-item {
+  display: inline-flex;
   justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.testimonial {
-  background-color: var(--accent-dark);
-  padding: 2rem;
-  border-radius: 10px;
-  width: 300px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-  font-style: italic;
+  align-items: center;
+  /* Base size of the closed envelope icon */
+  width: 120px;
+  height: 90px;
+  margin: 0 20px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
   position: relative;
+  transition: all 0.4s ease-in-out;
+  user-select: none;
+  z-index: 1;
+  overflow: hidden;
+  /* Ensure nothing spills out of the small box */
+  background-color: #f7f7f7;
+  border: 2px solid #ccc;
+  transform: scale(0.9) rotate(2deg);
 }
 
-.testimonial h4 {
-  margin-top: 1.5rem;
-  font-weight: 600;
-  font-style: normal;
+/* Apply different sizes/rotations to specific items for variety */
+.envelope-item:nth-child(even) {
+  transform: scale(0.7) rotate(-3deg);
+  margin-top: 10px;
+}
+
+.envelope-item:nth-child(3n) {
+  transform: scale(1.0) rotate(1deg);
+}
+
+/* --- ENVELOPE ICON AND CONTENT --- */
+
+.envelope-icon {
+  font-size: 2.5rem;
+  color: #cc0000;
+  /* Red icon color */
+  position: absolute;
+  transition: opacity 0.3s;
+  z-index: 10;
+  /* Above the hidden text */
+}
+
+/* Make the icon visible and centered within the box */
+.envelope-item .envelope-icon {
+  display: block;
+  /* Make sure the icon is visible */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Center the icon */
+  font-size: 2.5rem;
+  color: #cc0000;
+  /* Red icon color */
+  z-index: 10;
+  transition: opacity 0.3s;
+}
+
+
+/* Hides all content initially, only showing the envelope icon */
+.envelope-content {
+  display: none;
+}
+
+/* --- ACTIVE/OPEN ENVELOPE STYLES --- */
+
+.envelope-item.active {
+  /* When active, the original envelope item becomes invisible */
+  opacity: 0;
+  pointer-events: none;
+  /* Prevents clicks on the invisible item */
+  transform: scale(1) rotate(0deg) !important;
+  /* Reset transform */
+}
+
+.envelope-item.active .envelope-content {
+  display: block;
+  /* Make the content visible */
+  position: fixed;
+  /* CRUCIAL: Fixes the opened card to the center of the viewport */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Centers the fixed element */
+
+  /* Visuals of the Opened Review Card */
+  width: min(80vw, 500px);
+  /* Responsive max width */
+  min-height: 250px;
+  background: white;
+  border: 3px solid #007bff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+  border-radius: 12px;
+  white-space: normal;
+  z-index: 1000;
+  /* Ensure it is on top of everything */
+  animation: fade-in 0.5s ease-out;
+  /* Add a fade-in animation */
+  pointer-events: auto;
+  /* Allow interaction with the fixed card */
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Style the content inside the open card */
+.envelope-item.active .quote {
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.envelope-item.active .student-details {
   text-align: right;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.envelope-item.active .envelope-icon {
+  display: none;
+  /* Hide icon when opened */
 }
 
 /* Footer */
@@ -640,7 +784,9 @@ footer {
   margin-bottom: 0.5rem;
 }
 
-.info-section h2 {
+.info-section-1 h1,
+.info-section-1 h2,
+.info-section-2 h2 {
   color: var(--heading);
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -648,7 +794,8 @@ footer {
 }
 
 
-.info-section p {
+.info-section-1 p,
+.info-section-2 p {
   color: var(--text);
   font-size: 1.1rem;
   line-height: 1.7;
@@ -2239,12 +2386,15 @@ nav ul.active {
     /* Reduced from 1.1rem */
   }
 
-  .info-section h2 {
+  .info-section-1 h1,
+  .info-section-1 h2,
+  .info-section-2 h2 {
     font-size: 1.6rem;
     /* Reduced from 2rem */
   }
 
-  .info-section p {
+  .info-section-1 p,
+  .info-section-2 p {
     font-size: 1rem;
     /* Reduced from 1.1rem */
   }
@@ -2667,5 +2817,314 @@ nav ul.active {
   .country-card-turkey:hover .country-card,
   .country-card-malaysia:hover .country-card {
     transform: none;
+  }
+}
+
+/* ============================================
+   ADD THESE STYLES TO YOUR EXISTING style.css
+   ============================================ */
+
+/* Results Info Styling */
+.results-info {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--accent-light);
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  grid-column: 1 / -1;
+}
+
+.results-info p {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+.results-info strong {
+  color: var(--primary);
+  font-size: 1.3rem;
+}
+
+/* Improved Program Results Display */
+.program-results {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid var(--accent-light);
+}
+
+.program-results h4 {
+  color: var(--primary-dark);
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.program-results ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.program-item {
+  background-color: var(--background-light);
+  padding: 0.8rem;
+  margin-bottom: 0.6rem;
+  border-radius: 6px;
+  border-left: 3px solid var(--accent);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.program-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.program-item strong {
+  display: block;
+  color: var(--heading);
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+}
+
+.program-meta {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: block;
+}
+
+.more-programs {
+  margin-top: 0.8rem;
+  text-align: center;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Loading State Improvements */
+.loading-message {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  grid-column: 1 / -1;
+}
+
+.loading-message::after {
+  content: '...';
+  animation: dots 1.5s infinite;
+}
+
+@keyframes dots {
+
+  0%,
+  20% {
+    content: '.';
+  }
+
+  40% {
+    content: '..';
+  }
+
+  60%,
+  100% {
+    content: '...';
+  }
+}
+
+/* Better Mobile Navigation */
+@media (max-width: 768px) {
+
+  /* Make sure hamburger is always visible */
+  .hamburger {
+    display: block !important;
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 9999;
+    background: var(--primary);
+    width: 45px;
+    height: 45px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .hamburger:hover {
+    background: var(--primary-dark);
+    transform: scale(1.05);
+  }
+
+  .hamburger.open {
+    background: var(--accent-dark);
+  }
+
+  /* Mobile nav menu positioning */
+  nav ul {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 350px;
+    background: linear-gradient(to bottom, var(--primary), var(--primary-dark));
+    transition: right 0.3s ease;
+    padding: 5rem 1.5rem 2rem;
+    overflow-y: auto;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    z-index: 9998;
+  }
+
+  nav ul.active {
+    right: 0;
+  }
+
+  /* Overlay when menu is open */
+  nav ul.active::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+
+  /* Mobile dropdown styling */
+  nav ul li a {
+    font-size: 1.1rem;
+    padding: 1rem;
+    color: var(--text-light);
+    display: block;
+    border-radius: 6px;
+    margin-bottom: 0.3rem;
+  }
+
+  nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Dropdown menus in mobile */
+  .dropdown-menu,
+  .sub-menu {
+    position: static;
+    box-shadow: none;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0;
+  }
+
+  .dropdown-menu li a,
+  .sub-menu li a {
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  /* Search filters stacking */
+  .filter-controls,
+  .search-and-filters-container {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .filter-group,
+  #programSearch,
+  #degreeFilter,
+  #languageFilter {
+    width: 100%;
+  }
+
+  /* University card improvements for mobile */
+  .university-card {
+    padding: 1.2rem;
+  }
+
+  .uni-logo-wrapper {
+    margin-bottom: 1rem;
+  }
+
+  .uni-logo-wrapper img {
+    max-width: 90px;
+  }
+
+  .university-card h3 {
+    font-size: 1.2rem;
+    line-height: 1.3;
+  }
+
+  .program-item {
+    padding: 0.6rem;
+  }
+
+  .program-item strong {
+    font-size: 0.9rem;
+  }
+
+  .program-meta {
+    font-size: 0.8rem;
+  }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus states for accessibility */
+a:focus,
+button:focus,
+input:focus,
+select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Better touch targets for mobile */
+@media (max-width: 768px) {
+
+  a,
+  button,
+  input,
+  select {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* WhatsApp floating button (add this if you want a sticky contact button) */
+.whatsapp-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #25D366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 1rem;
+    right: 1rem;
+    width: 55px;
+    height: 55px;
+    font-size: 1.8rem;
   }
 }

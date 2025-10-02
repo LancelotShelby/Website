@@ -1,163 +1,261 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // === HEADER NAVIGATION LOGIC ===
+    // === IMPROVED HEADER NAVIGATION ===
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector("nav ul");
-    const dropdownLinks = document.querySelectorAll(".dropdown > a");
+    const dropdownParents = document.querySelectorAll(".dropdown > a");
+    const subDropdownParents = document.querySelectorAll(".sub-dropdown > a");
 
+    // Hamburger menu toggle
     if (hamburger && navMenu) {
-        hamburger.addEventListener("click", () => {
+        hamburger.addEventListener("click", (e) => {
+            e.stopPropagation();
             navMenu.classList.toggle("active");
             hamburger.classList.toggle("open");
         });
-    }
 
-    // Enable dropdown toggle on mobile
-    dropdownLinks.forEach(link => {
-        link.addEventListener("click", (e) => {
-            // Only run on mobile (screen < 768px)
-            if (window.innerWidth < 768) {
-                e.preventDefault(); // Prevent navigation
-                const dropdownMenu = link.nextElementSibling;
-                dropdownMenu.style.display =
-                    dropdownMenu.style.display === "block" ? "none" : "block";
+        // Close menu when clicking outside
+        document.addEventListener("click", (e) => {
+            if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+                navMenu.classList.remove("active");
+                hamburger.classList.remove("open");
             }
         });
-    });
+    }
 
-    // === UNIVERSITY FILTERING LOGIC ===
+    // Mobile dropdown behavior
+    if (window.innerWidth < 768) {
+        // Main dropdowns (Countries menu)
+        dropdownParents.forEach(link => {
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
+                const parent = link.parentElement;
+                const dropdownMenu = link.nextElementSibling;
+
+                // Close other open dropdowns
+                document.querySelectorAll('.dropdown').forEach(dropdown => {
+                    if (dropdown !== parent) {
+                        const menu = dropdown.querySelector('.dropdown-menu');
+                        if (menu) menu.style.display = 'none';
+                    }
+                });
+
+                // Toggle current dropdown
+                if (dropdownMenu) {
+                    dropdownMenu.style.display =
+                        dropdownMenu.style.display === "block" ? "none" : "block";
+                }
+            });
+        });
+
+        // Sub-dropdowns (Public/Private universities)
+        subDropdownParents.forEach(link => {
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
+                const parent = link.parentElement;
+                const subMenu = link.nextElementSibling;
+
+                // Close other sub-menus
+                document.querySelectorAll('.sub-dropdown').forEach(subDropdown => {
+                    if (subDropdown !== parent) {
+                        const menu = subDropdown.querySelector('.sub-menu');
+                        if (menu) menu.style.display = 'none';
+                    }
+                });
+
+                // Toggle current sub-menu
+                if (subMenu) {
+                    subMenu.style.display =
+                        subMenu.style.display === "block" ? "none" : "block";
+                }
+            });
+        });
+    }
+
+    // === IMPROVED UNIVERSITY SEARCH & FILTER ===
     const universityListContainer = document.getElementById('universityList');
     const searchInput = document.getElementById('searchInput');
     const countryFilter = document.getElementById('countryFilter');
     const typeFilter = document.getElementById('typeFilter');
     const degreeFilter = document.getElementById('degreeFilter');
-    const languageFilter = document.getElementById('languageFilter'); // Add this line
+    const languageFilter = document.getElementById('languageFilter');
 
     let allUniversities = [];
-    let currentSearchTerm = '';
+    let filteredCount = 0;
 
-    // Function to fetch university data
+    // Debounce function for better performance
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
+    // Fetch universities with better error handling
     async function fetchUniversities() {
+        if (!universityListContainer) return;
+
         try {
+            universityListContainer.innerHTML = '<p class="loading-message">Loading universities...</p>';
+
             const response = await fetch('data.json');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
+
             allUniversities = await response.json();
-            console.log('Data fetched:', allUniversities);
+            console.log(`✅ Loaded ${allUniversities.length} universities`);
 
-            populateLanguageFilter(allUniversities); // Populate language filter options
-            populateDegreeFilter(allUniversities); // Populate degree filter options
+            populateLanguageFilter(allUniversities);
+            populateDegreeFilter(allUniversities);
+            displayUniversities(allUniversities, {});
 
-            // Initial render
-            displayUniversities(allUniversities, { searchTerm: '', selectedDegree: 'all', selectedLanguage: 'all', searchType: 'all' });
         } catch (error) {
-            console.error('Could not fetch universities:', error);
-            if (universityListContainer) {
-                universityListContainer.innerHTML = '<p class="error-message">Failed to load universities. Please try again later.</p>';
-            }
+            console.error('❌ Error loading universities:', error);
+            universityListContainer.innerHTML = `
+                <div class="error-message">
+                    <p>⚠️ Failed to load universities.</p>
+                    <p>Please refresh the page or try again later.</p>
+                </div>
+            `;
         }
     }
 
-    // Populate language filter options dynamically
+    // Populate language filter
     function populateLanguageFilter(universities) {
         if (!languageFilter) return;
+
         const languageSet = new Set();
         universities.forEach(uni => {
             (uni.programs || []).forEach(prog => {
                 if (prog.language) {
-                    // Extract words (e.g., "Arabic" from "30% Arabic")
-                    prog.language.split(/[^A-Za-z]+/).forEach(word => {
-                        if (word.length > 1) languageSet.add(word.charAt(0).toUpperCase() + word.slice(1).toLowerCase());
+                    // Extract language words (handles "30% English" or "English/Turkish")
+                    const words = prog.language.split(/[^a-zA-Z]+/);
+                    words.forEach(word => {
+                        if (word.length > 1) {
+                            const formatted = word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+                            languageSet.add(formatted);
+                        }
                     });
                 }
             });
         });
+
         const languages = Array.from(languageSet).sort();
-        languageFilter.innerHTML = `<option value="">All Languages</option>` +
-            languages.map(lang => `<option value="${lang}">${lang}</option>`).join('');
+        languageFilter.innerHTML = `
+            <option value="">All Languages</option>
+            ${languages.map(lang => `<option value="${lang}">${lang}</option>`).join('')}
+        `;
     }
 
-    // Populate degree filter options dynamically
+    // Populate degree filter
     function populateDegreeFilter(universities) {
         if (!degreeFilter) return;
+
         const degreeSet = new Set();
         universities.forEach(uni => {
             (uni.programs || []).forEach(prog => {
                 if (prog.degree) degreeSet.add(prog.degree);
             });
         });
+
         const degrees = Array.from(degreeSet).sort();
-        degreeFilter.innerHTML = `<option value="">All Degrees</option>` +
-            degrees.map(deg => `<option value="${deg.toLowerCase()}">${deg}</option>`).join('');
+        degreeFilter.innerHTML = `
+            <option value="">All Degrees</option>
+            ${degrees.map(deg => `<option value="${deg.toLowerCase()}">${deg}</option>`).join('')}
+        `;
     }
 
-    // Function to display universities
+    // Display universities with results count
     function displayUniversities(universitiesToShow, searchCriteria = {}) {
         if (!universityListContainer) return;
 
-        universityListContainer.innerHTML = '';
         const searchTerm = (searchCriteria.searchTerm || '').toLowerCase().trim();
         const selectedDegree = (searchCriteria.selectedDegree || '').toLowerCase();
         const selectedLanguage = (searchCriteria.selectedLanguage || '').toLowerCase();
 
+        filteredCount = universitiesToShow.length;
+
         if (universitiesToShow.length === 0) {
-            universityListContainer.innerHTML = '<p class="no-results-message">No universities found matching your criteria.</p>';
+            universityListContainer.innerHTML = `
+                <div class="no-results-message">
+                    <p>🔍 No universities found matching your criteria.</p>
+                    <p>Try adjusting your filters or search terms.</p>
+                </div>
+            `;
             return;
         }
+
+        // Add results counter
+        const resultsInfo = document.createElement('div');
+        resultsInfo.className = 'results-info';
+        resultsInfo.innerHTML = `<p>Showing <strong>${filteredCount}</strong> ${filteredCount === 1 ? 'university' : 'universities'}</p>`;
+        universityListContainer.innerHTML = '';
+        universityListContainer.appendChild(resultsInfo);
 
         universitiesToShow.forEach(uni => {
             const card = document.createElement('div');
             card.classList.add('university-card');
 
-            let cardHtml = '';
             const matchingPrograms = searchTerm ? (uni.programs || []).filter(prog => {
                 const matchesSearch = prog.name && prog.name.toLowerCase().includes(searchTerm);
-                const matchesDegree = selectedDegree === 'all' || selectedDegree === '' || (prog.degree && prog.degree.toLowerCase() === selectedDegree);
-                // Use substring match for language
-                const matchesLanguage = selectedLanguage === 'all' || selectedLanguage === '' ||
-                    (prog.language && prog.language.toLowerCase().includes(selectedLanguage));
+                const matchesDegree = !selectedDegree || (prog.degree && prog.degree.toLowerCase() === selectedDegree);
+                const matchesLanguage = !selectedLanguage || (prog.language && prog.language.toLowerCase().includes(selectedLanguage));
                 return matchesSearch && matchesDegree && matchesLanguage;
             }) : [];
 
+            let cardHtml = '';
+
             if (matchingPrograms.length > 0) {
-                const programsListHtml = matchingPrograms.map(prog =>
-                    `<li class="program-item">${prog.name} (${prog.degree}) (${prog.language || 'N/A'}) (${prog.tuition || 'N/A'})</li>`
+                const programsListHtml = matchingPrograms.slice(0, 5).map(prog =>
+                    `<li class="program-item">
+                        <strong>${prog.name}</strong>
+                        <span class="program-meta">${prog.degree} | ${prog.language || 'N/A'} | ${prog.tuition || 'N/A'}</span>
+                    </li>`
                 ).join('');
+
+                const morePrograms = matchingPrograms.length > 5 ?
+                    `<p class="more-programs">+ ${matchingPrograms.length - 5} more programs</p>` : '';
 
                 cardHtml = `
                     <a href="${uni.explore_url}" class="university-card-link">
                         <div class="uni-logo-wrapper">
-                            <img src="${uni.explore_logo}" alt="${uni.name} Logo">
+                            <img src="${uni.explore_logo}" alt="${uni.name} Logo" loading="lazy">
                         </div>
                         <h3>${uni.name}</h3>
-                        <p class="uni-info"><strong>Country:</strong> ${uni.country}</p>
-                        <p class="uni-info"><strong>Type:</strong> ${uni.type.charAt(0).toUpperCase() + uni.type.slice(1)}</p>
+                        <p class="uni-info"><strong>📍</strong> ${uni.country}</p>
+                        <p class="uni-info"><strong>🏛️</strong> ${uni.type.charAt(0).toUpperCase() + uni.type.slice(1)}</p>
                         <div class="program-results">
-                            <h4>Matching Programs:</h4>
+                            <h4>Matching Programs (${matchingPrograms.length}):</h4>
                             <ul>${programsListHtml}</ul>
+                            ${morePrograms}
                         </div>
                     </a>
                 `;
             } else {
                 const offeredDegrees = new Set();
-                if (uni.programs) {
-                    uni.programs.forEach(prog => {
-                        if (prog.degree) offeredDegrees.add(prog.degree.toLowerCase());
-                    });
-                }
-                const sortedDegrees = Array.from(offeredDegrees).sort();
-                const degreesText = sortedDegrees.map(d => d.charAt(0).toUpperCase() + d.slice(1)).join(', ');
+                (uni.programs || []).forEach(prog => {
+                    if (prog.degree) offeredDegrees.add(prog.degree.toLowerCase());
+                });
+                const degreesText = Array.from(offeredDegrees)
+                    .sort()
+                    .map(d => d.charAt(0).toUpperCase() + d.slice(1))
+                    .join(', ');
 
                 cardHtml = `
                     <a href="${uni.explore_url}" class="university-card-link">
                         <div class="uni-logo-wrapper">
-                            <img src="${uni.explore_logo}" alt="${uni.name} Logo">
+                            <img src="${uni.explore_logo}" alt="${uni.name} Logo" loading="lazy">
                         </div>
                         <h3>${uni.name}</h3>
-                        <p class="uni-info"><strong>Country:</strong> ${uni.country}</p>
-                        <p class="uni-info"><strong>Type:</strong> ${uni.type.charAt(0).toUpperCase() + uni.type.slice(1)}</p>
-                        <p class="uni-info"><strong>Degrees:</strong> ${degreesText || 'N/A'}</p>
-                        <p class="uni-description">${uni.description || 'No description available.'}</p>
+                        <p class="uni-info"><strong>📍</strong> ${uni.country}</p>
+                        <p class="uni-info"><strong>🏛️</strong> ${uni.type.charAt(0).toUpperCase() + uni.type.slice(1)}</p>
+                        <p class="uni-info"><strong>🎓</strong> ${degreesText || 'Various programs'}</p>
+                        <p class="uni-description">${uni.description || 'Click to explore available programs.'}</p>
                     </a>
                 `;
             }
@@ -167,57 +265,69 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Filter function
+    // Main filter function
     function filterAndRenderUniversities() {
-        const searchTerm = searchInput.value.toLowerCase().trim();
-        const selectedCountry = countryFilter.value.toLowerCase();
-        const selectedType = typeFilter.value.toLowerCase();
-        const selectedDegree = degreeFilter.value.toLowerCase();
-        const selectedLanguage = languageFilter ? languageFilter.value.toLowerCase() : '';
-
-        currentSearchTerm = searchTerm;
+        const searchTerm = searchInput?.value.toLowerCase().trim() || '';
+        const selectedCountry = countryFilter?.value.toLowerCase() || '';
+        const selectedType = typeFilter?.value.toLowerCase() || '';
+        const selectedDegree = degreeFilter?.value.toLowerCase() || '';
+        const selectedLanguage = languageFilter?.value.toLowerCase() || '';
 
         const filteredUniversities = allUniversities.filter(uni => {
             const programs = uni.programs || [];
-            const matchesCountry = selectedCountry === '' || (uni.country && uni.country.toLowerCase() === selectedCountry);
-            const matchesType = selectedType === '' || (uni.type && uni.type.toLowerCase() === selectedType);
+
+            // Country and type filters
+            const matchesCountry = !selectedCountry || (uni.country && uni.country.toLowerCase() === selectedCountry);
+            const matchesType = !selectedType || (uni.type && uni.type.toLowerCase() === selectedType);
 
             if (!matchesCountry || !matchesType) return false;
 
-            const uniInfoMatchesSearch = searchTerm === '' ||
+            // Search term in university info
+            const uniInfoMatches = !searchTerm ||
                 uni.name.toLowerCase().includes(searchTerm) ||
                 (uni.description && uni.description.toLowerCase().includes(searchTerm));
 
-            const hasProgramMatchingAll = programs.some(prog => {
-                const programNameMatchesSearch = prog.name && prog.name.toLowerCase().includes(searchTerm);
-                const programMatchesDegree = selectedDegree === '' || (prog.degree && prog.degree.toLowerCase() === selectedDegree);
-                // Match if selected language is a substring (case-insensitive)
-                const programMatchesLanguage = selectedLanguage === '' ||
-                    (prog.language && prog.language.toLowerCase().includes(selectedLanguage));
-                return programNameMatchesSearch && programMatchesDegree && programMatchesLanguage;
+            // Program-specific matches
+            const hasProgramMatch = programs.some(prog => {
+                const nameMatch = !searchTerm || (prog.name && prog.name.toLowerCase().includes(searchTerm));
+                const degreeMatch = !selectedDegree || (prog.degree && prog.degree.toLowerCase() === selectedDegree);
+                const languageMatch = !selectedLanguage || (prog.language && prog.language.toLowerCase().includes(selectedLanguage));
+                return nameMatch && degreeMatch && languageMatch;
             });
 
-            if (hasProgramMatchingAll) return true;
+            if (hasProgramMatch) return true;
 
-            if (uniInfoMatchesSearch) {
-                // If searching by university info, still require degree/language if selected
-                let degreeOk = selectedDegree === '' || programs.some(prog => prog.degree && prog.degree.toLowerCase() === selectedDegree);
-                let languageOk = selectedLanguage === '' ||
-                    programs.some(prog => prog.language && prog.language.toLowerCase().includes(selectedLanguage));
-                return degreeOk && languageOk;
+            // If searching by uni info, still check degree/language availability
+            if (uniInfoMatches) {
+                const hasDegree = !selectedDegree || programs.some(prog =>
+                    prog.degree && prog.degree.toLowerCase() === selectedDegree
+                );
+                const hasLanguage = !selectedLanguage || programs.some(prog =>
+                    prog.language && prog.language.toLowerCase().includes(selectedLanguage)
+                );
+                return hasDegree && hasLanguage;
             }
 
             return false;
         });
 
-        displayUniversities(filteredUniversities, { searchTerm, selectedDegree, selectedLanguage });
+        displayUniversities(filteredUniversities, {
+            searchTerm,
+            selectedDegree,
+            selectedLanguage
+        });
     }
 
-    if (searchInput) searchInput.addEventListener('input', filterAndRenderUniversities);
+    // Debounced search for better performance
+    const debouncedFilter = debounce(filterAndRenderUniversities, 300);
+
+    // Event listeners
+    if (searchInput) searchInput.addEventListener('input', debouncedFilter);
     if (countryFilter) countryFilter.addEventListener('change', filterAndRenderUniversities);
     if (typeFilter) typeFilter.addEventListener('change', filterAndRenderUniversities);
     if (degreeFilter) degreeFilter.addEventListener('change', filterAndRenderUniversities);
     if (languageFilter) languageFilter.addEventListener('change', filterAndRenderUniversities);
 
+    // Initialize
     if (universityListContainer) fetchUniversities();
 });

@@ -1,36 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kola El Bahari Consulting</title>
-  <link rel="stylesheet" href="{{ relative_path_prefix }}style.css">
-  <script src="https://kit.fontawesome.com/510ddeed29.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kola El Bahari Consulting</title>
+    <link rel="stylesheet" href="{{ relative_path_prefix }}style.css">
+    <script src="https://kit.fontawesome.com/510ddeed29.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     {% include 'header_template.html' with context %}
     <div class="main-content-wrapper">
         <main class="student-focused-page-main">
             <div class="container">
-                <h1>Student Focused</h1>
-                <p>At Kola El Bahari Consulting, our students are at the heart of everything we do. We understand that each student has unique aspirations, challenges, and needs. That's why we offer personalized guidance and support tailored to your academic goals.</p>
-                
                 <section class="info-section-1">
+                    <h2>Student Focused</h2>
+                    <p>At Kola El Bahari Consulting, our students are at the heart of everything we do. We understand
+                        that
+                        each student has unique aspirations, challenges, and needs. That's why we offer personalized
+                        guidance and support tailored to your academic goals.</p>
+                </section>
+                <section class="info-section-2">
                     <h2>Personalized Guidance</h2>
-                    <p>We take the time to understand your individual goals and preferences. Our team of experts will work closely with you to identify the best universities and programs that align with your aspirations.</p>
+                    <p>We take the time to understand your individual goals and preferences. Our team of experts will
+                        work closely with you to identify the best universities and programs that align with your
+                        aspirations.</p>
+                </section>
+
+                <section class="info-section-1">
+                    <h2>Comprehensive Support</h2>
+                    <p>From the initial consultation to the final application submission, we provide comprehensive
+                        support throughout your entire journey. Our services include application assistance, document
+                        review, interview preparation, and more.</p>
                 </section>
 
                 <section class="info-section-2">
-                    <h2>Comprehensive Support</h2>
-                    <p>From the initial consultation to the final application submission, we provide comprehensive support throughout your entire journey. Our services include application assistance, document review, interview preparation, and more.</p>
-                </section>
-
-                <section class="info-section-3">
                     <h2>Ongoing Assistance</h2>
-                    <p>Our commitment to you doesn't end once you've secured a spot at your chosen university. We offer ongoing assistance to help you navigate any challenges that may arise during your studies abroad.</p>
+                    <p>Our commitment to you doesn't end once you've secured a spot at your chosen university. We offer
+                        ongoing assistance to help you navigate any challenges that may arise during your studies
+                        abroad.</p>
                 </section>
-
-                <a href="{{ relative_path_prefix }}explore.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Search</a>
             </div>
         </main>
     </div>
@@ -39,4 +49,5 @@
     </footer>
     <script src="{{ relative_path_prefix }}js/main.js"></script>
 </body>
+
 </html>
