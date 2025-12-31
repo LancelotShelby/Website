@@ -29361,5 +29361,21 @@
         "internal_url": "unis/turkey/trakya-university/trakya-university_university.html",
         "explore_url": "unis/turkey/trakya-university/trakya-university_university.html",
         "explore_logo": "images/trakya-university_logo.png"
+    },
+    {
+        "id": "tyumen-university",
+        "name": "University of Tyumen",
+        "country": "Russia",
+        "type": "Public",
+        "logo": "images/utmn-university_logo.png",
+        "url": null,
+        "description": null,
+        "slug": "tyumen-university",
+        "country_slug": "russia",
+        "programs": [],
+        "priority_programs": [],
+        "internal_url": "unis/russia/tyumen-university/tyumen-university_university.html",
+        "explore_url": "unis/russia/tyumen-university/tyumen-university_university.html",
+        "explore_logo": "images/utmn-university_logo.png"
     }
 ]

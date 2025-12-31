@@ -24,7 +24,6 @@
       "other_info": "Private universities often have more flexible admission criteria and shorter application windows. They may also offer scholarships based on academic merit."
     }
   },
-
   {
     "name": "Malaysia",
     "slug": "malaysia",
@@ -44,6 +43,56 @@
     "private_requirements": {
       "application_docs": [
         "High School Diploma (English or Malay, or a notarized translation in case the original is in another language)",
+        "High School Transcript",
+        "Valid Passport with a validity of at least 6 months"
+      ],
+      "other_info": "Private universities often have more flexible admission criteria and shorter application windows. They may also offer scholarships based on academic merit."
+    }
+  },
+  {
+    "name": "Russia",
+    "slug": "russia",
+    "description": "Russia is the largest country in the world, known for its rich cultural heritage, diverse landscapes, and strong emphasis on education. It attracts international students with its affordable tuition fees and a wide range of academic programs.",
+    "visa_info": "Students from most countries will need to apply for a student visa at a Russian embassy or consulate. A letter of acceptance from a recognized educational institution is required for the application.",
+    "living_costs": "The cost of living in Russia varies depending on the city, but it is generally affordable. Monthly expenses for a student can range from $250 to $700, depending on the location and lifestyle.",
+    "public_requirements": {
+      "application_docs": [
+        "High School Diploma (original and notarized translation)",
+        "High School Transcript",
+        "Valid Passport",
+        "Language Proficiency Certificate (TOEFL, IELTS, or Russian language proficiency test)",
+        "Unified State Exam (EGE) scores (if required by the university)"
+      ],
+      "other_info": "The requirements for public universities in Russia may vary depending on the institution and program. Some programs may require additional entrance exams or interviews."
+    },
+    "private_requirements": {
+      "application_docs": [
+        "High School Diploma (English or Russian, or a notarized translation in case the original is in another language)",
+        "High School Transcript",
+        "Valid Passport with a validity of at least 6 months"
+      ],
+      "other_info": "Private universities often have more flexible admission criteria and shorter application windows. They may also offer scholarships based on academic merit."
+    }
+  },
+  {
+    "name": "China",
+    "slug": "china",
+    "description": "China is a vast country with a rich history and culture, known for its rapid economic growth and development. It has become a popular destination for international students due to its affordable education and diverse academic programs.",
+    "visa_info": "Students from most countries will need to apply for a student visa (X visa) at a Chinese embassy or consulate. A letter of acceptance from a recognized educational institution is required for the application.",
+    "living_costs": "The cost of living in China varies depending on the city, but it is generally affordable. Monthly expenses for a student can range from $300 to $800, depending on the location and lifestyle.",
+    "public_requirements": {
+      "application_docs": [
+        "High School Diploma (original and notarized translation)",
+        "High School Transcript",
+        "Valid Passport",
+        "Language Proficiency Certificate (HSK for Chinese-taught programs or TOEFL/IELTS for English-taught programs)",
+        "Gaokao scores (if required by the university)"
+      ],
+      "other_info": "The requirements for public universities in China may vary depending on the institution and program. Some programs may require additional entrance exams or interviews."
+    },
+    "private_requirements": {
+      "application_docs": [
+        "High School Diploma (English or Chinese, or a notarized translation in case the original is in another language)",
         "High School Transcript",
         "Valid Passport with a validity of at least 6 months"
       ],
